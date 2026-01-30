@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>حسابي — VitaNova</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1f1b17;
+            --muted: #c9b896;
+            --text: #fffff0;
+            --line: rgba(201,184,150,.15);
+            --btn: #B8860B;
+            --btn2: #FFD700;
+            --gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);
+            --radius: 18px;
+            --radius2: 14px;
+            --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", Arial, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font);
+            background: radial-gradient(1200px 600px at 70% -10%, rgba(184,134,11,.25), transparent 60%), var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .top-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        [dir="ltr"] .top-actions { flex-direction: row-reverse; }
+        .account-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-title {
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .page-subtitle { color: var(--muted); font-size: 16px; }
+        .account-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 32px;
+            border: 1px solid var(--line);
+            margin-bottom: 24px;
+        }
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--btn2);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--line);
+        }
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(201,184,150,.08);
+        }
+        .info-row:last-child { border-bottom: none; }
+        .info-label {
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .info-value {
+            color: var(--text);
+            font-size: 14px;
+        }
+        .logout-btn {
+            width: 100%;
+            padding: 14px;
+            background: rgba(231,76,60,.2);
+            border: 1px solid rgba(231,76,60,.3);
+            border-radius: var(--radius2);
+            color: #e74c3c;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .logout-btn:hover {
+            background: rgba(231,76,60,.3);
+            transform: translateY(-2px);
+        }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(31,27,23,1);
+            color: var(--text);
+            border-color: var(--btn2);
+        }
+        .lang-toggle {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 10px 16px;
+            cursor: pointer;
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-toggle:hover {
+            background: rgba(31,27,23,1);
+            border-color: var(--btn2);
+            color: var(--text);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-actions">
+            <a href="store.html" class="back-btn">
+                <span>←</span>
+                <span data-i18n="backToStore">العودة للمتجر</span>
+            </a>
+            <button class="lang-toggle" aria-label="Toggle Language">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-text">AR</span>
+            </button>
+        </div>
+
+        <div class="account-header">
+            <h1 class="page-title" data-i18n="accountTitle">حسابي</h1>
+            <p class="page-subtitle" data-i18n="accountSubtitle">معلومات حسابك الشخصية</p>
+        </div>
+
+        <div class="account-card">
+            <h2 class="section-title" data-i18n="basicInfo">المعلومات الأساسية</h2>
+            <div class="info-row">
+                <span class="info-label" data-i18n="usernameLabel">اسم المستخدم</span>
+                <span class="info-value" id="username">...</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label" data-i18n="customerIdLabel">رقم العميل</span>
+                <span class="info-value" id="customerId" style="font-family: monospace; letter-spacing: 1px;">...</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label" data-i18n="emailLabel">البريد الإلكتروني</span>
+                <span class="info-value" id="email">...</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label" data-i18n="lastNameLabel">اسم العائلة</span>
+                <span class="info-value" id="lastName">...</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label" data-i18n="phoneLabel">رقم الهاتف</span>
+                <span class="info-value" id="phone">...</span>
+            </div>
+        </div>
+
+        <button class="logout-btn" onclick="handleLogout()" data-i18n="logoutBtn">تسجيل الخروج</button>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+        const API_BASE = 'http://127.0.0.1:5000';
+
+        async function loadUserData() {
+            // First check localStorage (most reliable for MVP)
+            const storedUser = localStorage.getItem('vitanova_user');
+            if(storedUser){
+                try{
+                    const user = JSON.parse(storedUser);
+                    console.log('User found in localStorage:', user);
+                    displayUserData(user);
+                    return;
+                } catch(e){
+                    console.log('Error parsing stored user:', e);
+                    localStorage.removeItem('vitanova_user');
+                }
+            }
+            
+            // Then try backend session as fallback
+            try {
+                const response = await fetch(`${API_BASE}/auth/check`, {
+                    credentials: 'include'
+                });
+                const data = await response.json();
+
+                if (!data.authenticated) {
+                    // Redirect to login with return URL to come back here after login
+                    window.location.replace('login.html?redirect=account.html');
+                    return;
+                }
+
+                // Display user data
+                displayUserData(data.user);
+
+            } catch (error) {
+                console.error('Error loading user data:', error);
+                // Redirect to login with return URL to come back here after login
+                window.location.replace('login.html?redirect=account.html');
+            }
+        }
+        
+        function displayUserData(user) {
+            const notSpecified = VitaNovaLang.t('notSpecified');
+            const notAvailable = VitaNovaLang.t('notAvailable');
+            document.getElementById('username').textContent = user.username || notSpecified;
+            document.getElementById('customerId').textContent = user.customer_id || notAvailable;
+            document.getElementById('email').textContent = user.email || notSpecified;
+            document.getElementById('lastName').textContent = user.last_name || notSpecified;
+            document.getElementById('phone').textContent = user.phone || notSpecified;
+        }
+
+        async function handleLogout() {
+            try {
+                // Clear localStorage first
+                localStorage.removeItem('vitanova_user');
+                console.log('Cleared user from localStorage');
+                
+                // Then try to logout from backend session
+                await fetch(`${API_BASE}/auth/logout`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+                
+                // Redirect to store
+                window.location.href = 'store.html';
+            } catch (error) {
+                console.error('Logout error:', error);
+                // Even if backend fails, still redirect (localStorage is already cleared)
+                window.location.href = 'store.html';
+            }
+        }
+
+        loadUserData();
+        
+        // Update title on language change
+        window.addEventListener('languageChanged', function(e) {
+            document.title = VitaNovaLang.t('accountTitle') + ' — VitaNova';
+            // Reload user data to update "not specified" texts
+            loadUserData();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# This file has been disabled
+# CSV logging feature was removed to fix server startup issues
+# Users are still saved to the database normally

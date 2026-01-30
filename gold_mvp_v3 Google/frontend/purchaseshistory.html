@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سجل طلباتي — VitaNova</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1f1b17;
+            --muted: #c9b896;
+            --text: #fffff0;
+            --line: rgba(201,184,150,.15);
+            --btn: #B8860B;
+            --btn2: #FFD700;
+            --gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);
+            --radius: 18px;
+            --radius2: 14px;
+            --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", Arial, sans-serif;
+            --success: #4ade80;
+            --warning: #F4B942;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font);
+            background: radial-gradient(1200px 600px at 70% -10%, rgba(184,134,11,.25), transparent 60%), var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .top-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+        [dir="ltr"] .top-actions { flex-direction: row-reverse; }
+        .header { text-align: center; margin-bottom: 40px; }
+        .brand-name {
+            font-size: 32px;
+            font-weight: 900;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+        .page-title { font-size: 20px; color: var(--muted); }
+        .summary-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 32px;
+            flex-wrap: wrap;
+        }
+        .summary-item {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 16px 24px;
+            text-align: center;
+            min-width: 150px;
+        }
+        .summary-value {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--btn2);
+            margin-bottom: 4px;
+        }
+        .summary-label { font-size: 12px; color: var(--muted); }
+        .empty-state {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 60px 32px;
+            border: 1px solid var(--line);
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+        }
+        .empty-icon { font-size: 64px; margin-bottom: 16px; opacity: 0.3; }
+        .empty-title { font-size: 24px; color: var(--text); margin-bottom: 12px; }
+        .empty-message { color: var(--muted); margin-bottom: 32px; line-height: 1.8; font-size: 15px; }
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background: var(--gold-gradient);
+            border: none;
+            border-radius: var(--radius2);
+            color: #1a1613;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,215,0,.3); }
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .back-btn:hover { background: rgba(31,27,23,1); color: var(--text); border-color: var(--btn2); }
+        .lang-toggle {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: var(--radius2);
+            padding: 10px 16px;
+            cursor: pointer;
+            color: var(--muted);
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .lang-toggle:hover { background: rgba(31,27,23,1); border-color: var(--btn2); color: var(--text); }
+        .order-card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 0;
+            border: 1px solid var(--line);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,.3);
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+        .order-card:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,.4); border-color: rgba(255,215,0,.3); }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            padding: 20px 24px;
+            background: rgba(10,10,10,.3);
+            border-bottom: 1px solid var(--line);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .order-id-section { display: flex; align-items: center; gap: 12px; }
+        .order-status-icon { font-size: 24px; }
+        .order-id { font-size: 18px; font-weight: 700; color: var(--btn2); margin-bottom: 4px; }
+        .order-date { font-size: 13px; color: var(--muted); }
+        .order-total { text-align: left; }
+        .order-total-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+        .order-total-amount { font-size: 24px; font-weight: 900; color: var(--btn2); }
+        .order-body { padding: 20px 24px; }
+        .order-items-title { font-size: 14px; color: var(--muted); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+        .order-items { margin-bottom: 20px; }
+        .order-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: center;
+            padding: 16px;
+            background: rgba(10,10,10,.4);
+            border-radius: var(--radius2);
+            margin-bottom: 10px;
+            border: 1px solid rgba(255,215,0,.1);
+            gap: 16px;
+        }
+        .order-item:last-child { margin-bottom: 0; }
+        .item-details { display: flex; flex-direction: column; gap: 6px; }
+        .item-name { font-size: 16px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; }
+        .item-name .gold-icon { color: var(--btn2); }
+        .item-breakdown { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; }
+        .item-breakdown span { padding: 4px 8px; background: rgba(26,22,19,.6); border-radius: 6px; color: var(--muted); }
+        .item-breakdown span strong { color: var(--text); }
+        .item-price { text-align: left; display: flex; flex-direction: column; align-items: flex-end; }
+        .item-price-value { font-size: 18px; font-weight: 900; color: var(--success); }
+        .item-quantity-badge { background: var(--gold-gradient); color: #1a1613; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-top: 4px; }
+        .order-divider { height: 1px; background: var(--line); margin: 20px 0; }
+        .order-summary { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; padding: 16px; background: rgba(26,22,19,.4); border-radius: var(--radius2); margin-bottom: 20px; }
+        .summary-detail { text-align: center; }
+        .summary-detail-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .summary-detail-value { font-size: 14px; font-weight: 700; color: var(--text); }
+        .order-footer { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; padding: 20px 24px; background: rgba(10,10,10,.2); border-top: 1px solid var(--line); }
+        .order-info { font-size: 13px; }
+        .order-info-label { color: var(--muted); margin-bottom: 4px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .order-info-value { color: var(--text); font-weight: 600; }
+        .payment-badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+        .payment-badge.online { background: rgba(74,222,128,.15); color: var(--success); border: 1px solid rgba(74,222,128,.3); }
+        .payment-badge.cod { background: rgba(244,185,66,.15); color: var(--warning); border: 1px solid rgba(244,185,66,.3); }
+        .loading { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 16px; }
+        .loading-spinner { font-size: 48px; animation: pulse 1.5s ease-in-out infinite; margin-bottom: 16px; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.95); } }
+        .address-full { grid-column: 1 / -1; }
+        @media (max-width: 768px) {
+            .order-header { flex-direction: column; gap: 16px; }
+            .order-total { text-align: right; }
+            .order-footer { grid-template-columns: 1fr; }
+            .order-summary { grid-template-columns: 1fr; }
+            .order-item { grid-template-columns: 1fr; }
+            .item-price { align-items: flex-start; margin-top: 8px; }
+            .summary-bar { flex-direction: column; align-items: center; }
+            .summary-item { width: 100%; max-width: 300px; }
+            .top-actions { flex-wrap: wrap; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="top-actions">
+            <a href="store.html" class="back-btn">
+                <span>←</span>
+                <span data-i18n="backToStore">العودة للمتجر</span>
+            </a>
+            <button class="lang-toggle" aria-label="Toggle Language">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                <span class="lang-text">AR</span>
+            </button>
+        </div>
+        
+        <div class="header">
+            <h1 class="brand-name">VitaNova</h1>
+            <p class="page-title" data-i18n="orderHistoryTitle">سجل طلباتي</p>
+        </div>
+
+        <div id="summaryBar" class="summary-bar" style="display:none;">
+            <div class="summary-item">
+                <div class="summary-value" id="totalOrders">0</div>
+                <div class="summary-label" data-i18n="totalOrders">إجمالي الطلبات</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value" id="totalSpent">0 AED</div>
+                <div class="summary-label" data-i18n="totalPurchases">إجمالي المشتريات</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-value" id="totalItems">0</div>
+                <div class="summary-label" data-i18n="totalBars">إجمالي السبائك</div>
+            </div>
+        </div>
+
+        <div id="ordersContainer">
+            <div class="loading">
+                <div class="loading-spinner">⏳</div>
+                <div data-i18n="loadingOrders">جاري تحميل طلباتك...</div>
+            </div>
+        </div>
+
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <div class="empty-icon">📦</div>
+            <h2 class="empty-title" data-i18n="noOrdersYet">لا توجد طلبات بعد</h2>
+            <p class="empty-message" data-i18n="noOrdersMessage">لم تقم بأي عمليات شراء حتى الآن.<br>ابدأ التسوق الآن واحصل على سبائك الذهب عيار 24 قيراط.</p>
+            <a href="store.html" class="btn" data-i18n="browseStore">تصفح المتجر</a>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+        const API_BASE = 'http://127.0.0.1:5000';
+
+        function formatAED(amount) {
+            return new Intl.NumberFormat('ar-AE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(amount) + ' AED';
+        }
+
+        function formatDate(dateStr) {
+            const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+            const locale = lang === 'ar' ? 'ar-EG' : 'en-US';
+            const date = new Date(dateStr);
+            return date.toLocaleString(locale, { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+        }
+
+        function formatRelativeDate(dateStr) {
+            const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+            const date = new Date(dateStr);
+            const now = new Date();
+            const diffMs = now - date;
+            const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+            
+            if (diffDays === 0) {
+                const diffHours = Math.floor(diffMs / (1000 * 60 * 60));
+                if (diffHours === 0) {
+                    const diffMins = Math.floor(diffMs / (1000 * 60));
+                    if (diffMins < 5) return lang === 'ar' ? 'الآن' : 'Just now';
+                    return lang === 'ar' ? `منذ ${diffMins} دقيقة` : `${diffMins} minutes ago`;
+                }
+                return lang === 'ar' ? `منذ ${diffHours} ساعة` : `${diffHours} hours ago`;
+            } else if (diffDays === 1) {
+                return lang === 'ar' ? 'أمس' : 'Yesterday';
+            } else if (diffDays < 7) {
+                return lang === 'ar' ? `منذ ${diffDays} أيام` : `${diffDays} days ago`;
+            } else if (diffDays < 30) {
+                const weeks = Math.floor(diffDays / 7);
+                return lang === 'ar' ? `منذ ${weeks} أسبوع` : `${weeks} week(s) ago`;
+            } else {
+                return formatDate(dateStr);
+            }
+        }
+
+        function getPaymentBadge(paymentType) {
+            const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+            if (paymentType === 'Cash on Delivery' || paymentType === 'cod') {
+                return `<span class="payment-badge cod">💵 ${lang === 'ar' ? 'الدفع عند الاستلام' : 'Cash on Delivery'}</span>`;
+            }
+            return `<span class="payment-badge online">💳 ${lang === 'ar' ? 'الدفع أونلاين' : 'Online Payment'}</span>`;
+        }
+
+        function updateSummary(orders) {
+            if (!orders || orders.length === 0) {
+                document.getElementById('summaryBar').style.display = 'none';
+                return;
+            }
+            let totalSpent = 0;
+            let totalItems = 0;
+            orders.forEach(order => {
+                totalSpent += order.total;
+                order.items.forEach(item => { totalItems += item.quantity; });
+            });
+            document.getElementById('totalOrders').textContent = orders.length;
+            document.getElementById('totalSpent').textContent = formatAED(totalSpent);
+            document.getElementById('totalItems').textContent = totalItems;
+            document.getElementById('summaryBar').style.display = 'flex';
+        }
+
+        function renderOrders(orders) {
+            const container = document.getElementById('ordersContainer');
+            const emptyState = document.getElementById('emptyState');
+            const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+            
+            if (!orders || orders.length === 0) {
+                container.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            updateSummary(orders);
+            
+            const t = (key) => VitaNovaLang ? VitaNovaLang.t(key) : key;
+            
+            container.innerHTML = orders.map(order => {
+                let totalGoldCost = 0, totalTax = 0, totalCommission = 0, totalQuantity = 0;
+                order.items.forEach(item => {
+                    totalTax += item.tax_amount;
+                    totalCommission += item.commission_amount;
+                    totalQuantity += item.quantity;
+                    totalGoldCost += item.gold_price_gram * parseFloat(item.product.replace(/[^0-9.]/g, '')) * item.quantity;
+                });
+
+                return `
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-id-section">
+                            <span class="order-status-icon">✅</span>
+                            <div>
+                                <div class="order-id">${lang === 'ar' ? 'طلب' : 'Order'} #${order.order_id}</div>
+                                <div class="order-date">${formatDate(order.purchase_date)} — ${formatRelativeDate(order.purchase_date)}</div>
+                            </div>
+                        </div>
+                        <div class="order-total">
+                            <div class="order-total-label">${lang === 'ar' ? 'الإجمالي' : 'Total'}</div>
+                            <div class="order-total-amount">${formatAED(order.total)}</div>
+                        </div>
+                    </div>
+                    <div class="order-body">
+                        <div class="order-items-title">
+                            <span>📦</span>
+                            <span>${lang === 'ar' ? 'المنتجات' : 'Products'} (${totalQuantity} ${lang === 'ar' ? 'سبيكة' : 'bars'})</span>
+                        </div>
+                        <div class="order-items">
+                            ${order.items.map(item => `
+                                <div class="order-item">
+                                    <div class="item-details">
+                                        <div class="item-name"><span class="gold-icon">🏅</span>${item.product}</div>
+                                        <div class="item-breakdown">
+                                            <span>${lang === 'ar' ? 'سعر الجرام' : 'Price/gram'}: <strong>${formatAED(item.gold_price_gram)}</strong></span>
+                                            <span>${lang === 'ar' ? 'الضريبة' : 'Tax'}: <strong>${formatAED(item.tax_amount)}</strong></span>
+                                            <span>${lang === 'ar' ? 'العمولة' : 'Commission'}: <strong>${formatAED(item.commission_amount)}</strong></span>
+                                        </div>
+                                    </div>
+                                    <div class="item-price">
+                                        <div class="item-price-value">${formatAED(item.total)}</div>
+                                        <div class="item-quantity-badge">× ${item.quantity}</div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="order-summary">
+                            <div class="summary-detail">
+                                <div class="summary-detail-label">${lang === 'ar' ? 'قيمة الذهب' : 'Gold Value'}</div>
+                                <div class="summary-detail-value">${formatAED(totalGoldCost)}</div>
+                            </div>
+                            <div class="summary-detail">
+                                <div class="summary-detail-label">${lang === 'ar' ? 'الضريبة 5%' : 'Tax 5%'}</div>
+                                <div class="summary-detail-value">${formatAED(totalTax)}</div>
+                            </div>
+                            <div class="summary-detail">
+                                <div class="summary-detail-label">${lang === 'ar' ? 'العمولة' : 'Commission'}</div>
+                                <div class="summary-detail-value">${formatAED(totalCommission)}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-footer">
+                        <div class="order-info">
+                            <div class="order-info-label">${lang === 'ar' ? 'طريقة الدفع' : 'Payment Method'}</div>
+                            <div class="order-info-value">${getPaymentBadge(order.payment_type)}</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">${lang === 'ar' ? 'رقم الواتساب' : 'WhatsApp'}</div>
+                            <div class="order-info-value">${order.whatsapp_number}</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">${lang === 'ar' ? 'الإمارة' : 'Emirate'}</div>
+                            <div class="order-info-value">${order.emirate}</div>
+                        </div>
+                        <div class="order-info">
+                            <div class="order-info-label">${lang === 'ar' ? 'المدينة' : 'City'}</div>
+                            <div class="order-info-value">${order.city || '—'}</div>
+                        </div>
+                        <div class="order-info address-full">
+                            <div class="order-info-label">${lang === 'ar' ? 'العنوان' : 'Address'}</div>
+                            <div class="order-info-value">${order.address}</div>
+                        </div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        async function loadOrders() {
+            const storedUser = localStorage.getItem('vitanova_user');
+            if (!storedUser) {
+                window.location.replace('login.html?redirect=purchaseshistory.html');
+                return;
+            }
+            
+            try {
+                const user = JSON.parse(storedUser);
+                if (!user.customer_id) {
+                    const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+                    document.getElementById('ordersContainer').innerHTML = `
+                        <div class="empty-state">
+                            <div class="empty-icon">⚠️</div>
+                            <h2 class="empty-title">${lang === 'ar' ? 'خطأ في حساب المستخدم' : 'Account Error'}</h2>
+                            <p class="empty-message">${lang === 'ar' ? 'لم يتم العثور على معرف العميل. يرجى تسجيل الخروج وتسجيل الدخول مرة أخرى.' : 'Customer ID not found. Please logout and login again.'}</p>
+                            <a href="store.html" class="btn">${lang === 'ar' ? 'العودة للمتجر' : 'Back to Store'}</a>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                const response = await fetch(`${API_BASE}/orders/customer/${user.customer_id}`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const data = await response.json();
+                renderOrders(data.orders);
+            } catch (error) {
+                console.error('Error loading orders:', error);
+                const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+                document.getElementById('ordersContainer').innerHTML = `
+                    <div class="empty-state">
+                        <div class="empty-icon">⚠️</div>
+                        <h2 class="empty-title">${lang === 'ar' ? 'حدث خطأ' : 'An Error Occurred'}</h2>
+                        <p class="empty-message">${lang === 'ar' ? 'لم نتمكن من تحميل طلباتك. يرجى المحاولة لاحقًا.' : 'Could not load your orders. Please try again later.'}</p>
+                        <a href="store.html" class="btn">${lang === 'ar' ? 'العودة للمتجر' : 'Back to Store'}</a>
+                    </div>
+                `;
+            }
+        }
+
+        async function checkAuth() {
+            const storedUser = localStorage.getItem('vitanova_user');
+            if(storedUser){
+                try{
+                    JSON.parse(storedUser);
+                    loadOrders();
+                    return;
+                } catch(e){
+                    localStorage.removeItem('vitanova_user');
+                }
+            }
+            
+            try {
+                const response = await fetch(`${API_BASE}/auth/check`, { credentials: 'include' });
+                const data = await response.json();
+                if (!data.authenticated) {
+                    window.location.replace('login.html?redirect=purchaseshistory.html');
+                } else {
+                    if (data.user) localStorage.setItem('vitanova_user', JSON.stringify(data.user));
+                    loadOrders();
+                }
+            } catch (error) {
+                window.location.replace('login.html?redirect=purchaseshistory.html');
+            }
+        }
+
+        checkAuth();
+        
+        window.addEventListener('languageChanged', function(e) {
+            document.title = VitaNovaLang.t('orderHistoryTitle') + ' — VitaNova';
+            loadOrders();
+        });
+    </script>
+</body>
+</html>

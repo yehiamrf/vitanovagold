@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تأكيد البريد الإلكتروني — VitaNova</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #1f1b17;
+            --muted: #c9b896;
+            --text: #fffff0;
+            --line: rgba(201,184,150,.15);
+            --btn: #B8860B;
+            --btn2: #FFD700;
+            --error: #e74c3c;
+            --success: #27ae60;
+            --gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);
+            --gold-glow: 0 0 20px rgba(255,215,0,.3);
+            --radius: 18px;
+            --radius2: 14px;
+            --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", Arial, sans-serif;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font);
+            background: radial-gradient(1200px 600px at 70% -10%, rgba(184,134,11,.25), transparent 60%), var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .auth-container {
+            width: 100%;
+            max-width: 420px;
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 40px 32px;
+            border: 1px solid var(--line);
+            box-shadow: 0 20px 60px rgba(0,0,0,.5);
+            text-align: center;
+        }
+        .logo-section { margin-bottom: 32px; }
+        .logo { width: 80px; height: 80px; margin-bottom: 16px; filter: drop-shadow(0 4px 12px rgba(255,215,0,.3)); }
+        .brand-name { font-size: 28px; font-weight: 900; background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+        .status-icon { width: 100px; height: 100px; margin: 0 auto 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 50px; }
+        .status-icon.success { background: rgba(39,174,96,.15); color: var(--success); }
+        .status-icon.error { background: rgba(231,76,60,.15); color: var(--error); }
+        .status-icon.loading { background: rgba(255,215,0,.15); color: var(--good); }
+        .spinner { width: 50px; height: 50px; border: 4px solid rgba(255,215,0,.2); border-top-color: var(--btn2); border-radius: 50%; animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .status-title { font-size: 22px; font-weight: 700; margin-bottom: 12px; }
+        .status-title.success { color: var(--success); }
+        .status-title.error { color: var(--error); }
+        .status-title.loading { color: var(--btn2); }
+        .status-message { color: var(--muted); font-size: 15px; line-height: 1.7; margin-bottom: 32px; }
+        .action-btn { display: inline-block; padding: 14px 32px; background: var(--gold-gradient); border: none; border-radius: var(--radius2); color: #1a1613; font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .action-btn:hover { transform: translateY(-2px); box-shadow: var(--gold-glow); }
+        .secondary-link { display: block; margin-top: 16px; color: var(--muted); font-size: 14px; text-decoration: none; transition: color 0.3s; }
+        .secondary-link:hover { color: var(--btn2); }
+        .top-actions { position: fixed; top: 20px; right: 20px; display: flex; align-items: center; gap: 12px; }
+        [dir="ltr"] .top-actions { right: auto; left: 20px; }
+        .lang-toggle { background: rgba(31,27,23,.8); border: 1px solid var(--line); border-radius: var(--radius2); padding: 10px 16px; cursor: pointer; color: var(--muted); font-weight: 600; font-size: 13px; transition: all 0.3s; display: flex; align-items: center; gap: 6px; }
+        .lang-toggle:hover { background: rgba(31,27,23,1); border-color: rgba(255,215,0,.3); color: var(--text); }
+        #loadingState, #successState, #errorState, #alreadyVerifiedState { display: none; }
+        @media (max-width: 480px) { .auth-container { padding: 32px 24px; } .brand-name { font-size: 24px; } .status-icon { width: 80px; height: 80px; font-size: 40px; } .top-actions { position: static; margin-bottom: 20px; justify-content: center; } body { padding-top: 20px; } }
+    </style>
+</head>
+<body>
+    <div class="top-actions">
+        <button class="lang-toggle" aria-label="Toggle Language">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <span class="lang-text">AR</span>
+        </button>
+    </div>
+
+    <div class="auth-container">
+        <div class="logo-section">
+            <img src="images/fillerlogovita.png" alt="VitaNova" class="logo">
+            <h1 class="brand-name">VitaNova</h1>
+        </div>
+
+        <div id="loadingState">
+            <div class="status-icon loading"><div class="spinner"></div></div>
+            <h2 class="status-title loading" data-i18n="verifying">جارٍ التحقق...</h2>
+            <p class="status-message" data-i18n="verifyingDesc">يرجى الانتظار بينما نتحقق من بريدك الإلكتروني</p>
+        </div>
+
+        <div id="successState">
+            <div class="status-icon success">✓</div>
+            <h2 class="status-title success" data-i18n="verificationSuccess">تم التحقق بنجاح!</h2>
+            <p class="status-message" data-i18n="verificationSuccessDesc">تم تأكيد بريدك الإلكتروني بنجاح.<br>يمكنك الآن الاستمتاع بجميع مميزات حسابك.</p>
+            <a href="login.html" class="action-btn" data-i18n="loginLink">تسجيل الدخول</a>
+            <a href="store.html" class="secondary-link" data-i18n="backToStore">العودة للمتجر</a>
+        </div>
+
+        <div id="alreadyVerifiedState">
+            <div class="status-icon success">✓</div>
+            <h2 class="status-title success" data-i18n="alreadyVerified">البريد مُفعّل بالفعل</h2>
+            <p class="status-message" data-i18n="alreadyVerifiedDesc">بريدك الإلكتروني مُفعّل بالفعل.<br>يمكنك تسجيل الدخول واستخدام حسابك.</p>
+            <a href="login.html" class="action-btn" data-i18n="loginLink">تسجيل الدخول</a>
+            <a href="store.html" class="secondary-link" data-i18n="backToStore">العودة للمتجر</a>
+        </div>
+
+        <div id="errorState">
+            <div class="status-icon error">✕</div>
+            <h2 class="status-title error" data-i18n="verificationFailed">فشل التحقق</h2>
+            <p class="status-message" id="errorMessage" data-i18n="verificationFailedDesc">رابط التحقق غير صالح أو منتهي الصلاحية.<br>يرجى طلب رابط تحقق جديد.</p>
+            <button onclick="requestNewVerification()" class="action-btn" data-i18n="requestNewLink">طلب رابط جديد</button>
+            <a href="login.html" class="secondary-link" data-i18n="loginLink">تسجيل الدخول</a>
+        </div>
+    </div>
+
+    <script src="translations.js"></script>
+    <script>
+        const API_BASE = 'http://127.0.0.1:5000';
+
+        function getTokenFromURL() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('token');
+        }
+
+        function showState(state) {
+            document.getElementById('loadingState').style.display = state === 'loading' ? 'block' : 'none';
+            document.getElementById('successState').style.display = state === 'success' ? 'block' : 'none';
+            document.getElementById('alreadyVerifiedState').style.display = state === 'already' ? 'block' : 'none';
+            document.getElementById('errorState').style.display = state === 'error' ? 'block' : 'none';
+        }
+
+        async function verifyEmail(token) {
+            showState('loading');
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/verify-email/${token}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+
+                const data = await response.json();
+
+                if (data.success) {
+                    if (data.already_verified) { showState('already'); }
+                    else { showState('success'); }
+                } else {
+                    document.getElementById('errorMessage').innerHTML = data.error || VitaNovaLang.t('verificationFailedDesc');
+                    showState('error');
+                }
+            } catch (error) {
+                document.getElementById('errorMessage').innerHTML = VitaNovaLang.t('connectionError');
+                showState('error');
+            }
+        }
+
+        async function requestNewVerification() {
+            const lang = VitaNovaLang ? VitaNovaLang.getLang() : 'ar';
+            const promptText = lang === 'ar' ? 'أدخل بريدك الإلكتروني لإرسال رابط تحقق جديد:' : 'Enter your email to receive a new verification link:';
+            const email = prompt(promptText);
+            
+            if (!email) return;
+
+            try {
+                const response = await fetch(`${API_BASE}/auth/resend-verification`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    const successMsg = lang === 'ar' ? 'تم إرسال رابط التحقق! يرجى التحقق من بريدك الإلكتروني.' : 'Verification link sent! Please check your email.';
+                    alert(successMsg);
+                    if (data.token) console.log('New verification token:', data.token);
+                } else {
+                    alert(data.error || VitaNovaLang.t('errorOccurred'));
+                }
+            } catch (error) {
+                alert(VitaNovaLang.t('connectionError'));
+            }
+        }
+
+        const token = getTokenFromURL();
+        
+        if (!token) {
+            document.getElementById('errorMessage').innerHTML = VitaNovaLang.t('noVerificationToken');
+            showState('error');
+        } else {
+            verifyEmail(token);
+        }
+        
+        window.addEventListener('languageChanged', function(e) {
+            document.title = VitaNovaLang.t('verifyEmailTitle') + ' — VitaNova';
+        });
+    </script>
+</body>
+</html>

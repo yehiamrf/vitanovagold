@@ -1,0 +1,3683 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>سبائك ذهب عيار 24 — تسليم داخل الإمارات</title>
+  <script src="translations.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <style>
+    :root{
+      --bg:#0a0a0a;
+      --card:#1f1b17;
+      --muted:#c9b896;
+      --text:#fffff0;
+      --line:rgba(201,184,150,.15);
+      --good:#FFD700;
+      --warn:#F4B942;
+      --bad:#CD7F32;
+      --btn:#B8860B;
+      --btn2:#FFD700;
+      --chip:#1a1613;
+      --shadow: 0 10px 30px rgba(0,0,0,.6);
+      --gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);
+      --gold-glow: 0 0 20px rgba(255,215,0,.3);
+      --radius:18px;
+      --radius2:14px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", "Noto Kufi Arabic", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(184,134,11,.25), transparent 60%),
+                  radial-gradient(900px 400px at 10% 0%, rgba(205,127,50,.15), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+    
+    /* ========== IMPROVED HEADER STYLES ========== */
+    header{
+      background: rgba(31,27,23,.5);
+      border-bottom: 2px solid var(--line);
+      margin-bottom: 32px;
+      backdrop-filter: blur(10px);
+      padding:20px 0;
+    }
+    .header-container{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 24px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:32px;
+    }
+    .brand{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      cursor:pointer;
+      transition: all 0.3s ease;
+      flex-shrink:0;
+    }
+    .brand:hover{
+      transform: translateY(-2px);
+    }
+    .logo{
+      width:70px;
+      height:70px;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 12px rgba(255,215,0,.3));
+      transition: filter 0.3s ease;
+    }
+    .brand:hover .logo{
+      filter: drop-shadow(0 6px 16px rgba(255,215,0,.5));
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+    }
+    .brand-name{
+      margin:0;
+      font-size:28px;
+      font-weight:900;
+      letter-spacing:.5px;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height:1.1;
+    }
+    .brand-tagline{
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:1.2px;
+      font-weight:500;
+    }
+    .header-right{
+      display:flex;
+      gap:16px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+    .unified-nav{
+      display:flex;
+      gap:8px;
+      align-items:center;
+      background: rgba(31,27,23,.6);
+      padding:10px 14px;
+      border-radius:16px;
+      border:1px solid rgba(255,215,0,.2);
+      box-shadow: 0 4px 20px rgba(0,0,0,.3);
+      backdrop-filter: blur(10px);
+    }
+    .nav-links{
+      display:flex;
+      gap:6px;
+      align-items:center;
+      padding-inline-end:12px;
+      border-inline-end:1px solid rgba(255,215,0,.15);
+    }
+    .nav-btn{
+      border:none;
+      cursor:pointer;
+      padding:10px 16px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:13px;
+      background: transparent;
+      color:var(--muted);
+      transition: all 0.3s ease;
+      white-space:nowrap;
+    }
+    .nav-btn:hover{
+      color:var(--text);
+      background: rgba(255,215,0,.08);
+      transform: translateY(-1px);
+    }
+    .nav-btn.active{
+      background: var(--gold-gradient);
+      color:#1a1613;
+      box-shadow: 0 4px 12px rgba(255,215,0,.25);
+    }
+    .header-actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .divider{
+      width:1px;
+      height:32px;
+      background: rgba(255,215,0,.15);
+    }
+    .lang-toggle{
+      background: transparent;
+      border:1px solid rgba(255,215,0,.25);
+      border-radius:10px;
+      padding:8px 12px;
+      cursor:pointer;
+      color:var(--muted);
+      font-weight:600;
+      font-size:12px;
+      transition: all 0.3s ease;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .lang-toggle:hover{
+      background: rgba(255,215,0,.08);
+      border-color:rgba(255,215,0,.4);
+      color:var(--text);
+    }
+    .cart-button{
+      position:relative;
+      background: transparent;
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:10px;
+      padding:9px 14px;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:var(--text);
+      font-weight:600;
+      font-size:13px;
+      transition: all 0.3s ease;
+    }
+    .cart-button:hover{
+      background: rgba(255,215,0,.1);
+      border-color:rgba(255,215,0,.5);
+      transform: translateY(-1px);
+    }
+    .cart-badge{
+      background: var(--gold-gradient);
+      color:#1a1613;
+      border-radius:999px;
+      padding:3px 8px;
+      font-size:11px;
+      font-weight:700;
+      min-width:20px;
+      text-align:center;
+      box-shadow: 0 2px 8px rgba(255,215,0,.3);
+    }
+    .auth-btn{
+      border:none;
+      cursor:pointer;
+      padding:10px 18px;
+      border-radius:10px;
+      font-weight:600;
+      font-size:13px;
+      transition: all 0.3s ease;
+      white-space:nowrap;
+    }
+    .auth-btn.login{
+      background: transparent;
+      border:1px solid rgba(255,215,0,.3);
+      color:var(--text);
+    }
+    .auth-btn.login:hover{
+      background: rgba(255,215,0,.08);
+      border-color:rgba(255,215,0,.5);
+    }
+    .auth-btn.register{
+      background: var(--gold-gradient);
+      color:#1a1613;
+      box-shadow: 0 4px 12px rgba(255,215,0,.25);
+      border:none;
+    }
+    .auth-btn.register:hover{
+      box-shadow: 0 6px 16px rgba(255,215,0,.4);
+      transform: translateY(-2px);
+    }
+    
+    /* Auth Buttons Container */
+    .auth-buttons{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    
+    /* User Menu Styles */
+    .user-menu-container{
+      position:relative;
+    }
+    .user-menu-btn{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      background: rgba(31,27,23,.6);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:12px;
+      color:var(--text);
+      cursor:pointer;
+      transition: all 0.3s ease;
+      font-family: inherit;
+      font-size:13px;
+      font-weight:600;
+    }
+    .user-menu-btn:hover{
+      background: rgba(31,27,23,.8);
+      border-color:rgba(255,215,0,.5);
+    }
+    .user-avatar{
+      font-size:18px;
+    }
+    .user-name{
+      max-width:100px;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+    }
+    .user-dropdown{
+      position:absolute;
+      top:calc(100% + 8px);
+      inset-inline-start:0;
+      min-width:220px;
+      background: rgba(31,27,23,.98);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:14px;
+      box-shadow: 0 10px 40px rgba(0,0,0,.5);
+      backdrop-filter: blur(20px);
+      z-index:1000;
+      opacity:0;
+      visibility:hidden;
+      transform: translateY(-10px);
+      transition: all 0.2s ease;
+    }
+    .user-dropdown.open{
+      opacity:1;
+      visibility:visible;
+      transform: translateY(0);
+    }
+    .dropdown-header{
+      padding:14px 16px;
+      border-bottom:1px solid rgba(255,215,0,.15);
+    }
+    .dropdown-email{
+      font-size:12px;
+      color:var(--muted);
+      word-break:break-all;
+    }
+    .dropdown-divider{
+      height:1px;
+      background:rgba(255,215,0,.15);
+      margin:4px 0;
+    }
+    .dropdown-item{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 16px;
+      color:var(--text);
+      font-size:14px;
+      text-decoration:none;
+      transition: all 0.2s ease;
+    }
+    .dropdown-item:hover{
+      background:rgba(255,215,0,.08);
+      color:var(--good);
+    }
+    .dropdown-item.logout{
+      color:#f87171;
+    }
+    .dropdown-item.logout:hover{
+      background:rgba(248,113,113,.1);
+      color:#f87171;
+    }
+    .dropdown-item svg{
+      flex-shrink:0;
+    }
+    
+    /* Rest of the styles remain the same */
+    .sub{margin-top:6px;color:var(--muted);line-height:1.6}
+    .topbar{
+      display:flex;flex-direction:column;gap:10px;min-width:340px;
+    }
+    .ticker{
+      border:1px solid var(--line);
+      background: rgba(31,27,23,.8);
+      backdrop-filter: blur(10px);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow), inset 0 0 30px rgba(255,215,0,.05);
+      overflow:hidden;
+    }
+    
+    /* Chart Ticker Layout */
+    .ticker-grid{
+      display:grid;
+      grid-template-columns: 380px 1fr;
+      gap:0;
+      min-height:420px;
+    }
+    
+    /* Price Panel */
+    .price-panel{
+      background: rgba(26,22,19,.5);
+      border-inline-start:1px solid var(--line);
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+    }
+    
+    .price-header{text-align:end}
+    .price-label{font-size:12px;color:var(--muted);margin-bottom:8px}
+    .price-main{font-size:36px;font-weight:900;color:var(--good);text-shadow: 0 0 20px rgba(255,215,0,.3);line-height:1;margin-bottom:12px}
+    .price-change{display:flex;align-items:center;gap:8px;font-size:14px;color:#4ade80;justify-content:flex-end;flex-wrap:wrap}
+    .price-change.negative{color:#f87171}
+    .price-change-period{font-size:11px;color:var(--muted);margin-inline-end:4px}
+    
+    .price-details{
+      display:flex;flex-direction:column;gap:8px;padding:16px;
+      background: rgba(10,10,10,.4);border-radius:12px;border:1px solid rgba(255,215,0,.15);
+    }
+    .price-detail-row{display:flex;justify-content:space-between;align-items:center;font-size:13px}
+    .price-detail-label{color:var(--muted)}
+    .price-detail-value{color:var(--text);font-weight:600}
+    
+    .update-section{display:flex;flex-direction:column;gap:12px}
+    .last-update{text-align:end;font-size:12px;color:var(--muted)}
+    .last-update-time{font-family: ui-monospace, monospace;color:var(--text);font-size:13px;margin-top:4px}
+    .refresh-btn{background: rgba(184,134,11,.2);border:1px solid rgba(255,215,0,.3);border-radius:10px;padding:12px;color:var(--good);font-weight:600;cursor:pointer;transition: all 0.3s ease;font-size:14px}
+    .refresh-btn:hover{background: rgba(184,134,11,.35);border-color:rgba(255,215,0,.5);transform: translateY(-1px)}
+    .ticker-note{font-size:11px;color:var(--muted);line-height:1.6;padding:12px;background: rgba(255,215,0,.05);border-radius:8px;border:1px solid rgba(255,215,0,.1)}
+    
+    /* Chart Panel */
+    .chart-panel{padding:24px;display:flex;flex-direction:column;gap:16px}
+    .chart-header{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+    .chart-title{font-size:18px;font-weight:700;color:var(--good)}
+    .timeframe-selector{display:flex;gap:4px;background: rgba(26,22,19,.5);padding:6px;border-radius:12px;border:1px solid rgba(255,215,0,.2);flex-wrap:wrap}
+    .timeframe-btn{background: transparent;border:none;padding:7px 10px;border-radius:8px;color:var(--muted);font-weight:600;font-size:11px;cursor:pointer;transition: all 0.2s ease;white-space:nowrap}
+    .timeframe-btn:hover{background: rgba(255,215,0,.1);color:var(--text)}
+    .timeframe-btn.active{background: var(--gold-gradient);color:#1a1613;box-shadow: 0 2px 8px rgba(255,215,0,.25)}
+    .chart-container{position:relative;height:375px;background: rgba(10,10,10,.3);border-radius:12px;padding:16px;border:1px solid rgba(255,215,0,.1)}
+    
+    /* Custom Date Picker Modal */
+    .date-picker-modal{
+      position:fixed;inset:0;background: rgba(0,0,0,.85);
+      display:none;align-items:center;justify-content:center;padding:18px;z-index:100;
+      backdrop-filter: blur(8px);
+    }
+    .date-picker-content{
+      background: rgba(31,27,23,.98);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:var(--radius);
+      padding:24px;
+      max-width:400px;
+      width:90%;
+      box-shadow: var(--shadow);
+    }
+    .date-picker-content h3{
+      margin:0 0 20px 0;
+      color:var(--good);
+      font-size:18px;
+      text-align:center;
+    }
+    .date-input-group{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .date-input-group label{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .date-input-group input[type="date"]{
+      background: rgba(10,10,10,.7);
+      border:1px solid rgba(255,215,0,.2);
+      border-radius:10px;
+      padding:12px;
+      color:var(--text);
+      font-family:var(--font);
+      font-size:14px;
+      outline:none;
+      transition: border-color 0.3s ease;
+    }
+    .date-input-group input[type="date"]:focus{
+      border-color:rgba(255,215,0,.5);
+    }
+    .date-input-group input[type="date"]::-webkit-calendar-picker-indicator{
+      filter: invert(0.8);
+      cursor:pointer;
+    }
+    .date-picker-buttons{
+      display:flex;
+      gap:10px;
+      margin-top:20px;
+    }
+    .date-picker-buttons .btn{
+      flex:1;
+    }
+    
+    .tickerRow{
+      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .tag{
+      font-size:12px;color:var(--muted);
+      border:1px solid var(--line);
+      background: rgba(26,22,19,.7);
+      padding:6px 10px;border-radius:999px;
+    }
+    .price{
+      font-size:20px;font-weight:700;
+      color:#FFD700;
+      text-shadow: 0 0 10px rgba(255,215,0,.3);
+    }
+    .muted{color:var(--muted)}
+    .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .btn{
+      border:none;cursor:pointer;
+      padding:10px 12px;border-radius:12px;
+      color:#1a1613;background: var(--gold-gradient);
+      font-weight:700;
+      box-shadow: 0 10px 20px rgba(255,215,0,.25), inset 0 1px 0 rgba(255,255,255,.3);
+      transition: all 0.3s ease;
+    }
+    .btn:hover{
+      box-shadow: 0 12px 24px rgba(255,215,0,.4), inset 0 1px 0 rgba(255,255,255,.3);
+      transform: translateY(-2px);
+    }
+    .btn.secondary{background: rgba(31,27,23,.6);border:1px solid rgba(255,215,0,.4);box-shadow:none;color:var(--text)}
+    .btn.secondary:hover{background: rgba(31,27,23,.8);border-color:rgba(255,215,0,.6)}
+    .btn.alt{background: linear-gradient(135deg, #F4B942, #CD7F32);}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .grid{
+      display:grid;grid-template-columns: 1.1fr .9fr;gap:16px;margin-top:16px;
+    }
+    .card{
+      background: rgba(31,27,23,.7);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .card .hd{
+      padding:16px 16px 12px;border-bottom:1px solid rgba(255,215,0,.2);
+      display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;
+    }
+    .card .bd{padding:16px}
+    .kpis{display:flex;gap:10px;flex-wrap:wrap}
+    .kpi{
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(255,215,0,.25);
+      background: rgba(26,22,19,.6);
+      min-width: 155px;
+    }
+    .kpi .t{font-size:12px;color:var(--muted)}
+    .kpi .v{font-size:16px;font-weight:800;margin-top:6px;color:#FFD700}
+    .products{
+      display:grid;grid-template-columns: repeat(2, minmax(0, 1fr));gap:12px;
+    }
+    .p{
+      border:1px solid rgba(255,215,0,.3);
+      background: rgba(26,22,19,.5);
+      border-radius:var(--radius2);
+      padding:14px;
+      display:flex;flex-direction:column;gap:10px;
+      transition: all 0.3s ease;
+    }
+    .p:hover{
+      border-color:rgba(255,215,0,.5);
+      box-shadow: 0 8px 24px rgba(255,215,0,.15);
+      transform: translateY(-2px);
+    }
+    .p .w{font-size:18px;font-weight:900;color:#FFD700}
+    .p .d{font-size:12px;color:var(--muted);line-height:1.6}
+    .p .calc{
+      border-top:1px dashed rgba(255,215,0,.25);
+      padding-top:10px;
+      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .p .final{
+      font-size:16px;font-weight:900;color:#F4B942;
+    }
+    .pill{
+      font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      background: rgba(255,215,0,.15);
+      border: 1px solid rgba(255,215,0,.4);
+      color:#FFD700;
+      width: fit-content;
+    }
+    .note{
+      padding:12px 14px;border-radius:14px;
+      border:1px solid rgba(255,215,0,.2);
+      background: rgba(26,22,19,.4);
+      color: var(--muted);
+      line-height:1.7;
+      font-size:13px;
+    }
+    .list{margin:0;padding:0 18px;line-height:1.9;color:var(--muted)}
+    .list li{margin:6px 0}
+    .sep{height:1px;background:rgba(255,215,0,.2);margin:14px 0}
+    .inline{
+      display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between
+    }
+    .field{
+      display:flex;flex-direction:column;gap:6px;min-width: 180px;flex:1;
+    }
+    label{font-size:12px;color:var(--muted)}
+    input, select, textarea{
+      background: rgba(10,10,10,.7);
+      border:1px solid rgba(255,215,0,.2);
+      border-radius:12px;
+      padding:10px 10px;
+      color:var(--text);
+      outline:none;
+      font-family:var(--font);
+      transition: border-color 0.3s ease;
+    }
+    input:focus, select:focus, textarea:focus{
+      border-color:rgba(255,215,0,.5);
+      box-shadow: 0 0 0 3px rgba(255,215,0,.1);
+    }
+    textarea{min-height:84px;resize:vertical}
+    .small{font-size:12px;color:var(--muted)}
+    .danger{color: var(--bad)}
+    .good{color: var(--good)}
+    .warn{color: var(--warn)}
+    
+    /* Professional Footer Styles */
+    .site-footer{
+      margin-top:60px;
+      padding:40px 0 20px;
+      border-top:2px solid var(--line);
+      background: rgba(31,27,23,.4);
+    }
+    .footer-content{
+      max-width:1200px;
+      margin:0 auto;
+      padding:0 24px;
+    }
+    .footer-sections{
+      display:grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap:40px;
+      margin-bottom:30px;
+    }
+    .footer-section h4{
+      color:var(--good);
+      font-size:16px;
+      margin:0 0 16px 0;
+      font-weight:700;
+    }
+    .footer-links{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .footer-link{
+      color:var(--muted);
+      font-size:14px;
+      text-decoration:none;
+      transition: all 0.3s ease;
+      display:inline-block;
+    }
+    .footer-link:hover{
+      color:var(--good);
+      transform: translateX(-4px);
+    }
+    [dir="ltr"] .footer-link:hover{
+      transform: translateX(4px);
+    }
+    .footer-bottom{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding-top:20px;
+      border-top:1px solid var(--line);
+      flex-wrap:wrap;
+      gap:16px;
+    }
+    .footer-copy{
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer-admin{
+      background: rgba(31,27,23,.6);
+      border: 1px solid rgba(255,215,0,.2);
+      color: var(--muted);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      cursor: pointer;
+      opacity: 0.6;
+      transition: all 0.3s ease;
+    }
+    .footer-admin:hover{
+      opacity: 1;
+      background: rgba(31,27,23,.8);
+      border-color: rgba(255,215,0,.4);
+      transform: translateY(-2px);
+    }
+    
+    /* Admin Login Modal */
+    .admin-modal{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,.85);
+      backdrop-filter: blur(8px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10000;
+    }
+    .admin-modal-content{
+      background: rgba(31,27,23,.95);
+      border: 1px solid rgba(255,215,0,.3);
+      border-radius: var(--radius);
+      padding: 28px;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: var(--shadow);
+    }
+    .admin-modal h3{
+      margin: 0 0 20px 0;
+      color: var(--good);
+      font-size: 20px;
+      text-align: center;
+    }
+    .admin-error{
+      color: #ff4444;
+      font-size: 13px;
+      margin-bottom: 12px;
+      text-align: center;
+      min-height: 18px;
+    }
+    .admin-controls{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .admin-control-btn{
+      padding: 14px;
+      background: rgba(26,22,19,.6);
+      border: 1px solid rgba(255,215,0,.3);
+      border-radius: 12px;
+      color: var(--text);
+      cursor: not-allowed;
+      opacity: 0.6;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .admin-control-btn:hover{
+      border-color: rgba(255,215,0,.4);
+    }
+    .admin-close{
+      margin-top: 20px;
+      width: 100%;
+    }
+    
+    /* Commission Modal Styles */
+    .commission-type-selector{
+      display:flex;
+      gap:10px;
+      margin-bottom:20px;
+    }
+    .commission-type-btn{
+      flex:1;
+      padding:14px 16px;
+      border:1px solid rgba(255,215,0,.3);
+      background: rgba(31,27,23,.6);
+      border-radius:12px;
+      color:var(--text);
+      font-weight:600;
+      cursor:pointer;
+      transition: all 0.3s ease;
+    }
+    .commission-type-btn:hover{
+      border-color:rgba(255,215,0,.5);
+      background: rgba(31,27,23,.8);
+    }
+    .commission-type-btn.active{
+      background: var(--gold-gradient);
+      color:#1a1613;
+      border-color:transparent;
+      box-shadow: 0 4px 12px rgba(255,215,0,.25);
+    }
+    .commission-inputs{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .commission-input-group{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    .commission-input-group label{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .commission-input-row{
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .commission-input-row input{
+      flex:1;
+    }
+    .commission-unit{
+      font-size:13px;
+      color:var(--muted);
+      min-width:30px;
+    }
+    
+    .modalBack{
+      position:fixed;inset:0;background: rgba(0,0,0,.8);
+      display:none;align-items:center;justify-content:center;padding:18px;z-index:50;
+    }
+    .modal{
+      width:min(820px, 100%);
+      background: rgba(31,27,23,.95);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:22px;
+      box-shadow: 0 25px 60px rgba(0,0,0,.7), 0 0 100px rgba(255,215,0,.1);
+      overflow:hidden;
+    }
+    .modal .mhd{
+      padding:14px 16px;border-bottom:1px solid rgba(255,215,0,.2);
+      display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;
+    }
+    .modal .mbd{padding:16px}
+    .x{
+      background: rgba(31,27,23,.8);
+      border:1px solid rgba(255,215,0,.3);
+      border-radius:12px;
+      padding:8px 10px;
+      cursor:pointer;
+      color:var(--text);
+      transition: all 0.3s ease;
+    }
+    .x:hover{
+      background: rgba(31,27,23,1);
+      border-color:rgba(255,215,0,.5);
+    }
+    .two{
+      display:grid;grid-template-columns: 1fr 1fr;gap:12px;
+    }
+    .status{
+      padding:10px 12px;border-radius:14px;
+      border:1px solid rgba(255,215,0,.25);
+      background: rgba(26,22,19,.5);
+      display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;
+    }
+    .status strong{font-size:14px}
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:12px}
+    
+    .cart-panel{
+      position:fixed;
+      top:0;
+      inset-inline-start:0;
+      width:33.333%;
+      min-width:380px;
+      height:100vh;
+      background: rgba(31,27,23,.98);
+      border-inline-end:1px solid rgba(255,215,0,.3);
+      box-shadow: 4px 0 40px rgba(0,0,0,.8), 0 0 100px rgba(255,215,0,.1);
+      backdrop-filter: blur(20px);
+      z-index:200;
+      transform: translateX(-100%);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-y:auto;
+      display:flex;
+      flex-direction:column;
+    }
+    [dir="ltr"] .cart-panel{
+      transform: translateX(-100%);
+    }
+    [dir="rtl"] .cart-panel{
+      transform: translateX(100%);
+    }
+    .cart-panel.open{
+      transform: translateX(0) !important;
+    }
+    .cart-header{
+      padding:20px;
+      border-bottom:1px solid rgba(255,215,0,.2);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:sticky;
+      top:0;
+      background: rgba(31,27,23,.98);
+      backdrop-filter: blur(20px);
+      z-index:10;
+    }
+    .cart-header h2{
+      margin:0;
+      font-size:20px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      color:#FFD700;
+    }
+    .close-cart{
+      width:40px;
+      height:40px;
+      border-radius:10px;
+      background: rgba(31,27,23,.8);
+      border:1px solid rgba(255,215,0,.3);
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:var(--text);
+      font-size:20px;
+      transition: all 0.2s;
+    }
+    .close-cart:hover{
+      background: rgba(31,27,23,1);
+      border-color:rgba(255,215,0,.5);
+    }
+    .cart-body{
+      flex:1;
+      padding:20px;
+      overflow-y:auto;
+    }
+    .cart-footer{
+      padding:20px;
+      border-top:1px solid rgba(255,215,0,.2);
+      background: rgba(31,27,23,.98);
+      backdrop-filter: blur(20px);
+    }
+    .qty-controls{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:12px;
+      padding:10px;
+      background: rgba(26,22,19,.5);
+      border:1px solid rgba(255,215,0,.2);
+      border-radius:12px;
+      margin-bottom:8px;
+    }
+    .qty-btn{
+      width:36px;
+      height:36px;
+      border-radius:8px;
+      border:1px solid rgba(255,215,0,.3);
+      background: rgba(184,134,11,.2);
+      color:#FFD700;
+      font-size:20px;
+      font-weight:700;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition: all 0.2s;
+    }
+    .qty-btn:hover{
+      background: rgba(184,134,11,.35);
+      border-color: rgba(255,215,0,.5);
+    }
+    .qty-btn:active{
+      transform: scale(0.95);
+    }
+    .qty-display{
+      font-size:18px;
+      font-weight:900;
+      min-width:40px;
+      text-align:center;
+      color:#FFD700;
+    }
+    .cart-total-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      padding:16px 0;
+      font-size:20px;
+      font-weight:900;
+      border-top:2px solid rgba(255,215,0,.3);
+    }
+    .empty-cart{
+      color:var(--muted);
+      font-size:14px;
+      text-align:center;
+      padding:40px 20px;
+    }
+    
+    /* Cart Table Styles */
+    .cart-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      margin-bottom:12px;
+      background: rgba(26,22,19,.2);
+      border:1px solid rgba(255,215,0,.15);
+      border-radius:14px;
+      overflow:hidden;
+    }
+    .cart-table thead{
+      background: rgba(31,27,23,.6);
+    }
+    .cart-table thead th{
+      padding:14px 16px;
+      font-size:13px;
+      font-weight:600;
+      color:var(--muted);
+      text-align:center;
+      border-bottom:1px solid rgba(255,215,0,.2);
+    }
+    .cart-table thead th:first-child{
+      text-align:start;
+      padding-inline-start:20px;
+      width:35%;
+    }
+    .cart-table thead th:nth-child(2){
+      width:25%;
+    }
+    .cart-table thead th:last-child{
+      text-align:end;
+      padding-inline-end:20px;
+      width:40%;
+    }
+    .cart-table tbody tr{
+      transition: all 0.2s ease;
+    }
+    .cart-table tbody tr:hover{
+      background: rgba(31,27,23,.3);
+    }
+    .cart-table tbody td{
+      padding:18px 16px;
+      font-size:14px;
+      color:var(--text);
+      vertical-align:middle;
+      text-align:center;
+      border-bottom:1px solid rgba(255,215,0,.08);
+    }
+    .cart-table tbody tr:last-child td{
+      border-bottom:none;
+    }
+    .cart-table tbody td:first-child{
+      text-align:start;
+      padding-inline-start:20px;
+      color:#FFD700;
+    }
+    .cart-table tbody td:last-child{
+      text-align:end;
+      padding-inline-end:20px;
+    }
+    .cart-table .total-cell{
+      text-align:end;
+      padding-inline-end:20px;
+    }
+    .cart-table .qty-cell .qty-controls{
+      justify-content:center;
+      padding:6px 8px;
+      margin:0 auto;
+      width:fit-content;
+      background: rgba(26,22,19,.4);
+    }
+    
+    /* Responsive Styles */
+    @media (max-width: 920px){
+      .grid{grid-template-columns: 1fr}
+      .topbar{min-width: unset;width: 100%}
+      .products{grid-template-columns:1fr}
+      .two{grid-template-columns:1fr}
+      .cart-panel{
+        width:85%;
+        min-width:unset;
+      }
+      .header-container{
+        flex-direction:column;
+        gap:20px;
+      }
+      .brand{
+        width:100%;
+        justify-content:center;
+      }
+      .header-right{
+        width:100%;
+      }
+      .unified-nav{
+        width:100%;
+        flex-direction:column;
+        gap:12px;
+        padding:12px;
+      }
+      .nav-links{
+        width:100%;
+        overflow-x:auto;
+        justify-content:flex-start;
+        border-inline-end:none;
+        border-bottom:1px solid rgba(255,215,0,.15);
+        padding-inline-end:0;
+        padding-bottom:12px;
+      }
+      .header-actions{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+      }
+      .nav-btn{
+        flex-shrink:0;
+      }
+      .divider{
+        display:none;
+      }
+      
+      /* Chart Ticker Responsive */
+      .ticker-grid{
+        grid-template-columns: 1fr;
+      }
+      .price-panel{
+        border-inline-start:none;
+        border-bottom:1px solid var(--line);
+      }
+      .chart-header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+      .timeframe-selector{
+        width:100%;
+        overflow-x:auto;
+      }
+      .chart-container{
+        height:220px;
+      }
+      .price-main{
+        font-size:28px;
+      }
+      .cart-table{
+        font-size:11px;
+      }
+      .cart-table thead th{
+        padding:10px 8px;
+        font-size:11px;
+      }
+      .cart-table thead th:first-child{
+        padding-inline-start:12px;
+      }
+      .cart-table thead th:last-child{
+        padding-inline-end:12px;
+      }
+      .cart-table tbody td{
+        padding:14px 8px;
+        font-size:11px;
+      }
+      .cart-table tbody td:first-child{
+        font-size:14px;
+        padding-inline-start:12px;
+      }
+      .cart-table .total-cell{
+        padding-inline-end:12px;
+      }
+      .cart-table .qty-controls{
+        padding:4px 6px;
+      }
+      .cart-table .qty-btn{
+        width:28px;
+        height:28px;
+        font-size:16px;
+      }
+      .cart-table .qty-display{
+        font-size:14px;
+        min-width:30px;
+      }
+    }
+    
+    @media (max-width: 768px){
+      .footer-sections{
+        grid-template-columns: 1fr;
+        gap:30px;
+      }
+      .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+      }
+      .commission-inputs{
+        grid-template-columns: 1fr;
+      }
+      .brand-name{
+        font-size:24px;
+      }
+      .logo{
+        width:60px;
+        height:60px;
+      }
+      header{
+        padding:16px 0;
+      }
+    }
+    
+    @media (max-width: 480px){
+      .brand-name{
+        font-size:22px;
+      }
+      .logo{
+        width:50px;
+        height:50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Sliding Cart Panel -->
+  <div class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <h2>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+        </svg>
+        <span data-i18n="cart">سلة التسوق</span>
+      </h2>
+      <button class="close-cart" id="closeCartBtn" aria-label="إغلاق السلة">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="empty-cart" data-i18n="emptyCart">السلة فارغة</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span data-i18n="total">المجموع</span>
+        <span id="cartTotalAmount">—</span>
+      </div>
+      <button class="btn" id="checkoutBtn" style="width:100%;margin-top:12px" disabled data-i18n="checkout">
+        إتمام الطلب
+      </button>
+    </div>
+  </div>
+
+  <!-- ========== SINGLE ROW HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <!-- Left: Brand -->
+      <div class="brand" onclick="window.location.href='home.html'">
+        <img src="images/fillerlogovita.png" alt="Vita Nova" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">Vita Nova</div>
+          <div class="brand-tagline" data-i18n="brandTagline">سبائك ذهب عيار 24</div>
+        </div>
+      </div>
+
+      <!-- Right: Unified Navigation & Actions -->
+      <div class="header-right">
+        <nav class="unified-nav">
+          <!-- Navigation Links -->
+          <div class="nav-links">
+            <a href="home.html" class="nav-btn" data-i18n="navHome">الرئيسية</a>
+            <a href="store.html" class="nav-btn active" data-i18n="navStore">المتجر</a>
+            <a href="news.html" class="nav-btn" data-i18n="navNews">الأخبار</a>
+            <a href="aboutus.html" class="nav-btn" data-i18n="navAbout">من نحن</a>
+            <a href="contact.html" class="nav-btn" data-i18n="navContact">اتصل بنا</a>
+          </div>
+
+          <!-- User Actions -->
+          <div class="header-actions">
+            <!-- Language Toggle -->
+            <button class="lang-toggle" aria-label="تبديل اللغة">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+              <span class="lang-text">AR</span>
+            </button>
+
+            <div class="divider"></div>
+
+            <!-- Cart Button -->
+            <button class="cart-button" id="openCartBtn" aria-label="السلة">
+              <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+              </svg>
+              <span id="cartCount" class="cart-badge">0</span>
+            </button>
+
+            <div class="divider"></div>
+
+            <!-- Auth Section - Shows login/register when logged out, user menu when logged in -->
+            <div id="authSection">
+              <!-- Guest State -->
+              <div id="guestAuth" class="auth-buttons">
+                <a href="login.html?redirect=store.html" class="auth-btn login" id="loginLink" data-i18n="login">تسجيل الدخول</a>
+                <a href="register.html?redirect=store.html" class="auth-btn register" id="registerLink" data-i18n="register">إنشاء حساب</a>
+              </div>
+              
+              <!-- Logged In State - Two separate buttons -->
+              <div id="userAuth" class="auth-buttons" style="display:none;">
+                <a href="purchaseshistory.html" class="auth-btn login" id="ordersBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-inline-end:6px;vertical-align:middle">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  <span data-i18n="orderHistory">سجل الطلبات</span>
+                </a>
+                <a href="account.html" class="auth-btn register" id="accountBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-inline-end:6px;vertical-align:middle">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                  <span data-i18n="myAccount">حسابي</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <!-- Price Ticker Section with Chart -->
+    <div style="margin-bottom:24px">
+      <div class="ticker" id="ticker">
+        <div class="ticker-grid">
+          <!-- Left Panel: Price Information -->
+          <div class="price-panel">
+            <div class="price-header">
+              <div class="price-label" data-i18n="currentPrice">السعر الحالي للجرام — AED</div>
+              <div class="price-main" id="spotPrice">—</div>
+              <div class="price-change" id="priceChange">
+                <span>—</span>
+              </div>
+            </div>
+            
+            <div class="price-details">
+              <div class="price-detail-row">
+                <span class="price-detail-value" id="priceWithVAT">—</span>
+                <span class="price-detail-label" data-i18n="withVat">مع ضريبة 5%</span>
+              </div>
+              <div class="price-detail-row">
+                <span class="price-detail-value" id="commissionInfo" data-i18n="commissionByType">حسب النوع</span>
+                <span class="price-detail-label" data-i18n="commission">العمولة</span>
+              </div>
+              <div class="price-detail-row">
+                <span class="price-detail-value" id="todayHigh" style="color: #4ade80">—</span>
+                <span class="price-detail-label" data-i18n="todayHigh">أعلى سعر اليوم</span>
+              </div>
+              <div class="price-detail-row">
+                <span class="price-detail-value" id="todayLow" style="color: #f87171">—</span>
+                <span class="price-detail-label" data-i18n="todayLow">أدنى سعر اليوم</span>
+              </div>
+            </div>
+            
+            <div class="update-section">
+              <div class="last-update">
+                <div data-i18n="lastUpdate">آخر تحديث</div>
+                <div class="last-update-time" id="lastUpdate">—</div>
+              </div>
+              <button class="refresh-btn" id="refreshNow" data-i18n="refreshNow">تحديث الآن</button>
+            </div>
+            
+            <div class="ticker-note" data-i18n="tickerNote">
+              💡 السعر يُعرض للشفافية. عند بدء الطلب يتم تثبيته 15 دقيقة لتجنب أي خلافات.
+            </div>
+          </div>
+          
+          <!-- Right Panel: Price Chart -->
+          <div class="chart-panel">
+            <div class="chart-header">
+              <div class="chart-title" data-i18n="priceHistory">📈 تاريخ أسعار الذهب</div>
+              <div class="timeframe-selector">
+                <button class="timeframe-btn active" data-timeframe="1D" onclick="changeTimeframe('1D')" data-i18n="timeframe1D">يوم</button>
+                <button class="timeframe-btn" data-timeframe="1W" onclick="changeTimeframe('1W')" data-i18n="timeframe1W">أسبوع</button>
+                <button class="timeframe-btn" data-timeframe="1M" onclick="changeTimeframe('1M')" data-i18n="timeframe1M">شهر</button>
+                <button class="timeframe-btn" data-timeframe="6M" onclick="changeTimeframe('6M')" data-i18n="timeframe6M">6 أشهر</button>
+                <button class="timeframe-btn" data-timeframe="1Y" onclick="changeTimeframe('1Y')" data-i18n="timeframe1Y">سنة</button>
+                <button class="timeframe-btn" data-timeframe="5Y" onclick="changeTimeframe('5Y')" data-i18n="timeframe5Y">5 سنوات</button>
+                <button class="timeframe-btn" data-timeframe="15Y" onclick="changeTimeframe('15Y')" data-i18n="timeframe15Y">15 سنة</button>
+                <button class="timeframe-btn" data-timeframe="CUSTOM" onclick="openCustomDatePicker()" data-i18n="timeframeCustom">تواريخ مخصصة</button>
+              </div>
+            </div>
+            
+            <div class="chart-container">
+              <canvas id="priceChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <div class="hd">
+          <div>
+            <div class="pill" data-i18n="mvpSellOnly">MVP — بيع فقط</div>
+            <h2 style="margin:10px 0 0;font-size:18px" data-i18n="chooseWeight">اختر الوزن واطلب الآن</h2>
+            <div class="muted" style="margin-top:6px;font-size:13px;line-height:1.6" data-i18n="priceCalculation">
+              السعر النهائي = (سعر الذهب اللحظي × الوزن × ضريبة %5) + عمولة ثابتة.
+            </div>
+          </div>
+          <div class="kpis">
+            <div class="kpi">
+              <div class="t" data-i18n="priceLock">تثبيت السعر</div>
+              <div class="v" data-i18n="priceLockValue">15 دقيقة</div>
+            </div>
+            <div class="kpi">
+              <div class="t" data-i18n="delivery">التسليم</div>
+              <div class="v" data-i18n="deliveryValue">24–72 ساعة</div>
+            </div>
+            <div class="kpi">
+              <div class="t" data-i18n="payment">الدفع</div>
+              <div class="v" data-i18n="paymentValue">أونلاين / COD</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bd">
+          <div class="products" id="products"></div>
+
+          <div class="sep"></div>
+
+          <div class="note">
+            <b data-i18n="trustNote">ملاحظة ثقة:</b> <span data-i18n="trustNoteText">يتم تنفيذ تجهيز وتسليم الطلبات عبر شركاء متخصصين ومرخّصين داخل الإمارات وفق نظام White-label،
+            مع فاتورة رسمية عند التسليم وسياسة استرجاع في حال عدم التسليم خلال المدة المحددة.</span>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="hd">
+          <div>
+            <h2 style="margin:0;font-size:18px" data-i18n="howItWorks">كيف يعمل الطلب؟</h2>
+            <div class="muted" style="margin-top:6px;font-size:13px;line-height:1.6" data-i18n="howItWorksSubtitle">
+              تجربة بسيطة بدون تعقيد: طلب → تثبيت سعر → دفع → تسليم.
+            </div>
+          </div>
+        </div>
+        <div class="bd">
+          <ol class="list" id="stepsList">
+            <li data-i18n="step1">تختار الوزن وتضغط "أضف للسلة".</li>
+            <li data-i18n="step2">نثبّت السعر لمدة <b>15 دقيقة</b> لإتمام الطلب.</li>
+            <li data-i18n="step3">تختار طريقة الدفع: <b>أونلاين</b> أو <b>عند الاستلام</b>.</li>
+            <li data-i18n="step4">التجهيز والتسليم خلال <b>24–72 ساعة</b> داخل الإمارات.</li>
+          </ol>
+
+          <div class="sep"></div>
+
+          <div class="note">
+            <b data-i18n="pricingPolicy">سياسة التسعير:</b> <span data-i18n="pricingPolicyText">السعر يُحسب حسب سعر الذهب في وقت الطلب + عمولة تجهيز وتسليم ثابتة.
+            لا توجد رسوم مخفية.</span>
+          </div>
+
+          <div class="sep"></div>
+
+          <div class="note">
+            <b data-i18n="refundPolicy">سياسة الاسترجاع:</b> <span data-i18n="refundPolicyText">في حال عدم التسليم خلال 24–72 ساعة، يحق للعميل استرجاع المبلغ كاملًا.</span>
+          </div>
+
+          <div style="margin-top:18px;font-size:12px;color:var(--muted);line-height:1.7" data-i18n="disclaimer">
+            هذه صفحة تجريبية (MVP). لا تُعد نصيحة مالية ولا تمثل استثمارًا. بيع وتسليم ذهب فعلي فقط.
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- Custom Date Picker Modal -->
+  <div class="date-picker-modal" id="datePickerModal">
+    <div class="date-picker-content">
+      <h3 data-i18n="selectDateRange">📅 اختر نطاق التواريخ</h3>
+      
+      <div class="date-input-group">
+        <label data-i18n="fromDate">من تاريخ</label>
+        <input type="date" id="customStartDate" min="2000-01-01">
+      </div>
+      
+      <div class="date-input-group">
+        <label data-i18n="toDate">إلى تاريخ</label>
+        <input type="date" id="customEndDate">
+      </div>
+      
+      <div class="date-picker-buttons">
+        <button class="btn" id="applyCustomDates" data-i18n="apply">تطبيق</button>
+        <button class="btn secondary" id="cancelCustomDates" data-i18n="cancel">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SETTINGS -->
+  <div class="modalBack" id="settingsBack" role="dialog" aria-modal="true" aria-label="إعدادات السعر">
+    <div class="modal">
+      <div class="mhd">
+        <div>
+          <strong data-i18n="priceSettings">إعدادات السعر</strong>
+          <div class="muted" style="font-size:12px;margin-top:4px" id="settingsSubtitle">اختر بين السعر اليدوي أو التحديث التلقائي عبر API</div>
+        </div>
+        <button class="x" id="closeSettings" data-i18n="back">أرجع</button>
+      </div>
+      <div class="mbd">
+        <div class="two">
+          <div class="card" style="border-radius:18px">
+            <div class="hd"><strong data-i18n="priceMode">وضع السعر اليدوي</strong></div>
+            <div class="bd">
+              <div class="field">
+                <label data-i18n="goldPricePerGram">سعر الذهب للجرام (AED)</label>
+                <input id="manualPrice" type="number" step="0.01" min="0" />
+                <div class="small" data-i18n="manualModeNote">هذا يكفي لتجربة الـ MVP بدون أي API.</div>
+              </div>
+              <div class="row">
+                <button class="btn" id="saveManual" data-i18n="saveManualPrice">حفظ السعر اليدوي</button>
+                <button class="btn secondary" id="useManualMode" data-i18n="useManualMode">استخدم الوضع اليدوي</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius:18px">
+            <div class="hd"><strong data-i18n="apiMode">وضع API (اختياري)</strong></div>
+            <div class="bd">
+              <div class="note" style="margin-bottom:10px">
+                <b data-i18n="apiSecurityWarning">تنبيه أمني:</b> <span data-i18n="apiSecurityNote">الأفضل أن يكون مفتاح الـ API في السيرفر. هذه صفحة MVP بدون سيرفر، فلو وضعت المفتاح هنا سيكون ظاهرًا لمن يفحص الكود.
+                إذا كان هذا غير مناسب، استمر بالسعر اليدوي.</span>
+              </div>
+
+              <div class="field">
+                <label data-i18n="apiUrl">رابط API (GET)</label>
+                <input id="apiUrl" type="text" value="http://127.0.0.1:5000/price" />
+                <div class="small" data-i18n="apiUrlNote">يجب أن يرجع JSON يحتوي سعر الجرام بالدرهم.</div>
+              </div>
+
+              <div class="field" style="margin-top:10px">
+                <label data-i18n="jsonPath">طريقة استخراج السعر من JSON</label>
+                <input id="jsonPath" type="text" value="price" />
+                <div class="small"><span data-i18n="jsonPathNote">اكتب المسار مثل:</span> <span class="mono">a.b.c</span></div>
+              </div>
+
+              <div class="row" style="margin-top:10px">
+                <button class="btn alt" id="enableApiMode" data-i18n="enableApiMode">تفعيل وضع API</button>
+                <button class="btn secondary" id="testApi" data-i18n="testApi">اختبار API</button>
+              </div>
+
+              <div class="small" style="margin-top:10px" data-i18n="apiProviderNote">
+                يمكنك استخدام أي مزود سعر (Metals-API / GoldAPI / GoldPriceZ…).
+                المهم أن يكون الناتج "AED لكل جرام".
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="note">
+          <b data-i18n="result">النتيجة:</b> <span data-i18n="resultNote">تحديث لحظي كل 60 ثانية + تثبيت السعر 15 دقيقة عند بدء الطلب.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: CHECKOUT -->
+  <div class="modalBack" id="checkoutBack" role="dialog" aria-modal="true" aria-label="إتمام الطلب">
+    <div class="modal">
+      <div class="mhd">
+        <div>
+          <strong data-i18n="checkoutTitle">إتمام الطلب</strong>
+          <div class="muted" style="font-size:12px;margin-top:4px" data-i18n="priceLocked15Min">السعر مثبت لمدة 15 دقيقة لإتمام الطلب.</div>
+        </div>
+        <button class="x" id="closeCheckout" data-i18n="close">إغلاق</button>
+      </div>
+      <div class="mbd">
+        <div class="status" id="lockBox">
+          <div>
+            <strong data-i18n="priceLock">تثبيت السعر</strong>
+            <div class="muted" style="margin-top:4px;font-size:12px" data-i18n="lockExpires">سينتهي التثبيت عند انتهاء العدّاد.</div>
+          </div>
+          <div style="text-align:end">
+            <div class="muted" style="font-size:12px" data-i18n="timeRemaining">الوقت المتبقي</div>
+            <div class="mono" id="lockTimer">—</div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="two">
+          <div class="card" style="border-radius:18px">
+            <div class="hd"><strong data-i18n="orderDetails">تفاصيل الطلب</strong></div>
+            <div class="bd">
+              <div class="field">
+                <label data-i18n="productsInCart">المنتجات في السلة</label>
+                <div id="coCartItems" style="padding:12px;background:rgba(2,6,23,.35);border:1px solid var(--line);border-radius:12px;font-size:14px;max-height:200px;overflow-y:auto"></div>
+              </div>
+
+              <div class="inline" style="margin-top:10px">
+                <div class="field">
+                  <label data-i18n="lockedGramPrice">سعر الجرام المثبّت (AED)</label>
+                  <input id="coSpot" type="text" readonly />
+                </div>
+                <div class="field">
+                  <label data-i18n="totalWeight">الوزن الإجمالي</label>
+                  <div id="coTotalWeight" style="padding:10px;background:rgba(2,6,23,.35);border:1px solid var(--line);border-radius:12px;font-weight:700">—</div>
+                </div>
+              </div>
+              
+              <div class="field" style="margin-top:10px">
+                <label data-i18n="totalVat">الضريبة الإجمالية (AED)</label>
+                <div id="coTotalVAT" style="padding:10px;background:rgba(2,6,23,.35);border:1px solid var(--line);border-radius:12px;font-weight:700;line-height:1.5">—</div>
+              </div>
+              
+              <div class="field" style="margin-top:10px">
+                <label data-i18n="totalCommission">العمولة الإجمالية (AED)</label>
+                <div id="coTotalFee" style="padding:10px;background:rgba(2,6,23,.35);border:1px solid var(--line);border-radius:12px;font-weight:700;line-height:1.5">—</div>
+              </div>
+
+              <div class="field" style="margin-top:10px">
+                <label data-i18n="finalPrice">السعر النهائي (AED)</label>
+                <input id="coFinal" type="text" readonly />
+              </div>
+
+              <div class="note" style="margin-top:10px" data-i18n="finalPriceFormula">
+                السعر النهائي = (سعر الجرام × الوزن الكلي × ضريبة 5%) + العمولة الثابتة.
+              </div>
+            </div>
+          </div>
+
+          <div class="card" style="border-radius:18px">
+            <div class="hd"><strong data-i18n="customerInfo">بيانات العميل وطريقة الدفع</strong></div>
+            <div class="bd">
+              <div class="inline">
+                <div class="field">
+                  <label data-i18n="name">الاسم</label>
+                  <input id="cuName" type="text" />
+                </div>
+                <div class="field">
+                  <label data-i18n="phone">الهاتف (واتساب)</label>
+                  <input id="cuPhone" type="text" />
+                </div>
+              </div>
+
+              <div class="inline" style="margin-top:10px">
+                <div class="field">
+                  <label data-i18n="emirate">الإمارة</label>
+                  <select id="cuEmirate">
+                    <option value="dubai" data-i18n="dubai">دبي</option>
+                    <option value="abuDhabi" data-i18n="abuDhabi">أبوظبي</option>
+                    <option value="sharjah" data-i18n="sharjah">الشارقة</option>
+                    <option value="ajman" data-i18n="ajman">عجمان</option>
+                    <option value="rasAlKhaimah" data-i18n="rasAlKhaimah">رأس الخيمة</option>
+                    <option value="fujairah" data-i18n="fujairah">الفجيرة</option>
+                    <option value="ummAlQuwain" data-i18n="ummAlQuwain">أم القيوين</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label data-i18n="city">المدينة</label>
+                  <input id="cuCity" type="text" data-i18n-placeholder="cityPlaceholder" placeholder="مثال: الخليج التجاري، مارينا" />
+                </div>
+              </div>
+
+              <div class="inline" style="margin-top:10px">
+                <div class="field">
+                  <label data-i18n="paymentMethod">طريقة الدفع</label>
+                  <select id="cuPay">
+                    <option value="online" data-i18n="payOnline">الدفع أونلاين</option>
+                    <option value="cod" data-i18n="payCod">الدفع عند الاستلام</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="field" style="margin-top:10px">
+                <label data-i18n="shortAddress">العنوان المختصر</label>
+                <textarea id="cuAddr" data-i18n-placeholder="addressPlaceholder" placeholder="اكتب المنطقة/الشارع/ملاحظات التوصيل"></textarea>
+              </div>
+
+              <div class="sep"></div>
+
+              <div class="row">
+                <button class="btn" id="sendToDealer" data-i18n="sendToDealer">إرسال الطلب للتاجر واتساب</button>
+                <button class="btn secondary" id="copySummary" data-i18n="copySummary">نسخ ملخص الطلب</button>
+              </div>
+
+              <div class="small" style="margin-top:10px" data-i18n="mvpNote">
+                * في الـ MVP هذا الإرسال يفتح واتساب برسالة جاهزة للتاجر. لاحقًا يمكن أتمتته.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sep"></div>
+
+        <div class="note">
+          <b data-i18n="deliveryPolicy">سياسة التسليم:</b> <span data-i18n="deliveryPolicyText">التسليم خلال 24–72 ساعة داخل الإمارات. في حال عدم التسليم خلال المدة المحددة، يحق للعميل استرجاع المبلغ كاملًا.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+(() => {
+  // ======== DEPLOYMENT CONFIGURATION ========
+  // Change this to 'production' when deploying to Google Cloud
+  const ENVIRONMENT = 'development'; // 'development' | 'production'
+  
+  // API Base URLs for different environments
+  const API_URLS = {
+    development: 'http://127.0.0.1:5000',
+    production: 'https://goldapi-292134033818.europe-west1.run.app' // <-- UPDATE THIS for Google Cloud
+  };
+  
+  // Get the correct API base URL for current environment
+  const API_BASE_URL = API_URLS[ENVIRONMENT];
+  console.log(`🌐 Environment: ${ENVIRONMENT}`);
+  console.log(`🌐 API Base URL: ${API_BASE_URL}`);
+  
+  // ======== CONFIG (MVP) ========
+  const FEES_AED = {
+    "1": 30,
+    "2.5": 40,
+    "5": 60,
+    "10": 80
+  };
+  const REFRESH_MS = 60 * 1000; // 60 seconds - SINGLE source of truth for refresh interval
+  const LOCK_MS = 15 * 60 * 1000;
+  const DEALER_WHATSAPP = "31615681610";
+  
+  // ======== SINGLETON INTERVAL MANAGEMENT ========
+  // This prevents duplicate intervals from being created on page reload or multiple tabs
+  let priceRefreshIntervalId = null;
+  let lastApiCallTimestamp = 0;
+  const MIN_API_CALL_INTERVAL = 55000; // Minimum 55 seconds between API calls (debounce)
+  
+  // Generate a unique session ID for debugging multiple tabs
+  const SESSION_ID = Math.random().toString(36).substring(2, 8).toUpperCase();
+  console.log('\n🌟 ========================================');
+  console.log('🌟 VitaNova Gold Store - Session:', SESSION_ID);
+  console.log('🌟 API Refresh Interval:', REFRESH_MS / 1000, 'seconds');
+  console.log('🌟 ========================================\n');
+
+  // ======== State ========
+  const state = {
+    mode: "api",
+    spotAEDPerGram: null,
+    lastUpdate: null,
+    apiUrl: null,
+    jsonPath: null,
+    lock: null,
+    cart: {},
+    commissionType: "fixed",
+    commissionValues: {
+      "1": 30,
+      "2.5": 40,
+      "5": 60,
+      "10": 80
+    },
+    // Chart state
+    chart: null,
+    currentTimeframe: '1D',
+    customStartDate: null,
+    customEndDate: null,
+    priceHistory: [],
+    periodChange: null,
+    periodChangePercent: null,
+    chartStartDate: null,
+    chartEndDate: null,
+    priceStats: {
+      current: null,
+      todayHigh: null,
+      todayLow: null,
+      change: null,
+      changePercent: null
+    }
+  };
+
+  // ======== Storage ========
+  const LS_KEY = "gold_mvp_state_v1";
+  function loadState(){
+    try{
+      const raw = localStorage.getItem(LS_KEY);
+      if(!raw) return;
+      const s = JSON.parse(raw);
+      Object.assign(state, s);
+      if(!state.cart) state.cart = {};
+    }catch(e){}
+  }
+  function saveState(){
+    localStorage.setItem(LS_KEY, JSON.stringify({
+      mode: state.mode,
+      spotAEDPerGram: state.spotAEDPerGram,
+      lastUpdate: state.lastUpdate,
+      apiUrl: state.apiUrl,
+      jsonPath: state.jsonPath,
+      lock: state.lock,
+      cart: state.cart,
+      commissionType: state.commissionType,
+      commissionValues: state.commissionValues
+    }));
+  }
+
+  // ======== Helpers ========
+  const fmtAED = (n) => {
+    if(n === null || n === undefined || Number.isNaN(n)) return "—";
+    return new Intl.NumberFormat(VitaNovaLang.getLang() === 'ar' ? "ar-AE" : "en-AE", { maximumFractionDigits: 2, minimumFractionDigits: 2 }).format(n) + " AED";
+  };
+  const nowISO = () => new Date().toLocaleString(VitaNovaLang.getLang() === 'ar' ? "ar-EG" : "en-US", { hour12: false });
+
+  function get(obj, path){
+    if(!path) return undefined;
+    const parts = path.split(".").map(p => p.trim()).filter(Boolean);
+    let cur = obj;
+    for(const p of parts){
+      if(cur && Object.prototype.hasOwnProperty.call(cur, p)){
+        cur = cur[p];
+      } else {
+        return undefined;
+      }
+    }
+    return cur;
+  }
+  
+  // Format date for display
+  function formatDateArabic(date) {
+    if (!date) return '';
+    const d = new Date(date);
+    const locale = VitaNovaLang.getLang() === 'ar' ? 'ar-EG' : 'en-US';
+    return d.toLocaleDateString(locale, { year: 'numeric', month: 'short', day: 'numeric' });
+  }
+  
+  // Get timeframe label
+  function getTimeframeLabel(timeframe) {
+    const labels = {
+      '1D': VitaNovaLang.t('timeframe1D'),
+      '1W': VitaNovaLang.t('timeframe1W'),
+      '1M': VitaNovaLang.t('timeframe1M'),
+      '6M': VitaNovaLang.t('timeframe6M'),
+      '1Y': VitaNovaLang.t('timeframe1Y'),
+      '5Y': VitaNovaLang.t('timeframe5Y'),
+      '15Y': VitaNovaLang.t('timeframe15Y'),
+      'CUSTOM': VitaNovaLang.t('timeframeCustom')
+    };
+    return labels[timeframe] || timeframe;
+  }
+
+  // ======== Commission Helpers ========
+  function getCommissionTypeName(){
+    return state.commissionType === "fixed" ? VitaNovaLang.t('fixedCommission') : VitaNovaLang.t('percentCommission');
+  }
+
+  function calculateFee(weight, qty = 1){
+    // Returns TOTAL fee for given qty of items (not per-unit)
+    const value = state.commissionValues[weight] || 0;
+    if(state.commissionType === "fixed"){
+      // Fixed commission: multiply per-unit value by quantity
+      return value * qty;
+    } else {
+      // Percent commission: calculate based on total gold cost
+      if(state.spotAEDPerGram === null) return 0;
+      const goldCost = state.spotAEDPerGram * Number(weight) * qty;
+      return goldCost * (value / 100);
+    }
+  }
+
+  function getDisplayFee(weight){
+    return calculateFee(weight, 1);
+  }
+
+  function getCommissionLabel(weight){
+    const value = state.commissionValues[weight] || 0;
+    if(state.commissionType === "fixed"){
+      return fmtAED(value);
+    } else {
+      return value + "%";
+    }
+  }
+
+  // ======== DOM ========
+  const $ = (id) => document.getElementById(id);
+  const elSpot = $("spotPrice");
+  const elLast = $("lastUpdate");
+  const elProducts = $("products");
+  const settingsBack = $("settingsBack");
+  const checkoutBack = $("checkoutBack");
+
+  // ======== Render Products ========
+  const weights = ["1","2.5","5","10"];
+  const productHtml = (w) => {
+    const commLabel = getCommissionLabel(w);
+    const commTypeName = getCommissionTypeName();
+    const qty = state.cart[w] || 0;
+    return `
+      <div class="p">
+        <div class="w">${w}g</div>
+        <div class="d">
+           ${VitaNovaLang.t('goldBar24k')}${commTypeName}.
+          </div>
+        <div class="calc">
+          <div>
+            <div class="muted" style="font-size:12px">${commTypeName}</div>
+            <div style="font-weight:900">${commLabel}</div>
+          </div>
+          <div style="text-align:end">
+            <div class="muted" style="font-size:12px">${VitaNovaLang.t('currentPriceBeforeVat')}</div>
+            <div class="final" id="final_${w}">—</div>
+          </div>
+        </div>
+        ${qty > 0 ? `
+          <div class="qty-controls">
+            <button class="qty-btn" data-weight="${w}" data-action="decrease">−</button>
+            <span class="qty-display">${qty}</span>
+            <button class="qty-btn" data-weight="${w}" data-action="increase">+</button>
+          </div>
+        ` : ''}
+        <button class="btn" data-buy-now="${w}">${VitaNovaLang.t('addToCart')}</button>
+      </div>
+    `;
+  };
+
+  function renderProducts(){
+    elProducts.innerHTML = weights.map(productHtml).join("");
+    
+    elProducts.querySelectorAll("button[data-buy-now]").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const w = btn.getAttribute("data-buy-now");
+        addToCart(w, true);
+      });
+    });
+    
+    elProducts.querySelectorAll(".qty-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const w = btn.getAttribute("data-weight");
+        const action = btn.getAttribute("data-action");
+        if(action === "increase") {
+          increaseQuantity(w);
+        } else {
+          decreaseQuantity(w);
+        }
+      });
+    });
+    
+    updateFinals();
+  }
+
+  // ======== Cart Management ========
+  function addToCart(weight, openCart = false){
+    if(!state.cart[weight]) {
+      state.cart[weight] = 0;
+    }
+    state.cart[weight] += 1;
+    saveState();
+    renderProducts();
+    renderCart();
+    if(openCart) {
+      openCartPanel();
+    }
+  }
+
+  function increaseQuantity(weight){
+    state.cart[weight] = (state.cart[weight] || 0) + 1;
+    saveState();
+    renderProducts();
+    renderCart();
+  }
+
+  function decreaseQuantity(weight){
+    if(state.cart[weight] > 1) {
+      state.cart[weight] -= 1;
+    } else {
+      delete state.cart[weight];
+    }
+    saveState();
+    renderProducts();
+    renderCart();
+  }
+
+  function getCartTotal(){
+    if(state.spotAEDPerGram === null) return null;
+    let total = 0;
+    for(const [weight, qty] of Object.entries(state.cart)){
+      const fee = calculateFee(weight, qty);
+      const goldCost = state.spotAEDPerGram * Number(weight) * qty;
+      const itemTotal = goldCost * 1.05 + fee;
+      total += itemTotal;
+    }
+    return total;
+  }
+
+  function getTotalFixedCosts(){
+    let totalFees = 0;
+    for(const [weight, qty] of Object.entries(state.cart)){
+      totalFees += calculateFee(weight, qty);
+    }
+    return totalFees;
+  }
+
+  function getCartItemCount(){
+    return Object.values(state.cart).reduce((sum, qty) => sum + qty, 0);
+  }
+
+  function openCartPanel(){
+    $("cartPanel").classList.add("open");
+  }
+
+  function closeCartPanel(){
+    $("cartPanel").classList.remove("open");
+  }
+
+  function renderCart(){
+    const cartBody = $("cartBody");
+    const cartCount = $("cartCount");
+    const cartTotalAmount = $("cartTotalAmount");
+    const checkoutBtn = $("checkoutBtn");
+    const itemCount = getCartItemCount();
+    
+    if(itemCount > 0) {
+      if(cartCount) {
+        cartCount.textContent = itemCount;
+      }
+    } else {
+      if(cartCount) cartCount.textContent = "0";
+    }
+    
+    if(itemCount === 0) {
+      cartBody.innerHTML = `<div class="empty-cart">${VitaNovaLang.t('emptyCart')}</div>`;
+      checkoutBtn.disabled = true;
+      cartTotalAmount.innerHTML = "—";
+      return;
+    }
+    
+    const commTypeName = getCommissionTypeName();
+    
+    let html = `
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>${VitaNovaLang.t('product')}</th>
+            <th>${VitaNovaLang.t('quantity')}</th>
+            <th>${VitaNovaLang.t('total')}</th>
+          </tr>
+        </thead>
+        <tbody>
+    `;
+    
+    for(const [weight, qty] of Object.entries(state.cart)){
+      const fee = calculateFee(weight, qty);
+      const goldCost = state.spotAEDPerGram ? state.spotAEDPerGram * Number(weight) * qty : null;
+      const vatAmount = goldCost ? goldCost * 0.05 : null;
+      const itemTotal = goldCost ? goldCost * 1.05 + fee : null;
+      
+      html += `
+        <tr>
+          <td><span style="font-size:18px;font-weight:900">${VitaNovaLang.t('product')} ${weight}g</span></td>
+          <td class="qty-cell">
+            <div class="qty-controls">
+              <button class="qty-btn cart-qty-btn" data-weight="${weight}" data-action="decrease">−</button>
+              <span class="qty-display">${qty}</span>
+              <button class="qty-btn cart-qty-btn" data-weight="${weight}" data-action="increase">+</button>
+            </div>
+          </td>
+          <td class="total-cell">
+            <div style="font-size:16px;font-weight:700;color:#FFD700;white-space:nowrap">${itemTotal ? fmtAED(itemTotal) : '—'}</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:4px;line-height:1.5;white-space:nowrap">
+              ${vatAmount ? VitaNovaLang.t('includesVat') + ' ' + fmtAED(vatAmount) : ''}
+            </div>
+            <div style="font-size:11px;color:var(--muted);line-height:1.5;white-space:nowrap">
+              ${fee ? VitaNovaLang.t('includesCommission') + ' ' + fmtAED(fee) : ''}
+            </div>
+          </td>
+        </tr>
+      `;
+    }
+    
+    html += `
+        </tbody>
+      </table>
+    `;
+    
+    cartBody.innerHTML = html;
+    
+    cartBody.querySelectorAll('.cart-qty-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const w = btn.getAttribute('data-weight');
+        const action = btn.getAttribute('data-action');
+        if(action === 'increase') {
+          increaseQuantity(w);
+        } else {
+          decreaseQuantity(w);
+        }
+      });
+    });
+    
+    const total = getCartTotal();
+    const totalFees = getTotalFixedCosts();
+    
+    let totalVAT = 0;
+    if(state.spotAEDPerGram !== null) {
+      for(const [weight, qty] of Object.entries(state.cart)){
+        const goldCost = state.spotAEDPerGram * Number(weight) * qty;
+        totalVAT += goldCost * 0.05;
+      }
+    }
+    
+    cartTotalAmount.innerHTML = total ? `
+      <div>
+        <div>${fmtAED(total)}</div>
+        <div style="font-size:12px;color:var(--muted);font-weight:400;margin-top:4px">${VitaNovaLang.t('includesVat')} ${fmtAED(totalVAT)}</div>
+        <div style="font-size:12px;color:var(--muted);font-weight:400">${VitaNovaLang.t('includesCommission')} ${fmtAED(totalFees)}</div>
+      </div>
+    ` : '—';
+    checkoutBtn.disabled = !state.spotAEDPerGram;
+  }
+
+  function updateFinals(){
+    for(const w of weights){
+      const fee = FEES_AED[w];
+      const el = $("final_" + w);
+      if(!el) continue;
+      if(state.spotAEDPerGram === null) { el.textContent = "—"; continue; }
+      const final = (state.spotAEDPerGram * Number(w));
+      el.textContent = fmtAED(final);
+    }
+    renderCart();
+  }
+
+  // ======== Price Handling ========
+  function setPrice(price){
+    const p = Number(price);
+    if(!Number.isFinite(p) || p <= 0) return false;
+    state.spotAEDPerGram = p;
+    state.lastUpdate = new Date().toISOString();
+    saveState();
+    paintTicker();
+    updateFinals();
+    return true;
+  }
+
+  function paintTicker(){
+    elSpot.textContent = fmtAED(state.spotAEDPerGram);
+    const locale = VitaNovaLang.getLang() === 'ar' ? 'ar-EG' : 'en-US';
+    elLast.textContent = state.lastUpdate ? (new Date(state.lastUpdate)).toLocaleString(locale, { hour12:false }) : "—";
+    
+    // Update price with VAT
+    const priceWithVATEl = document.getElementById('priceWithVAT');
+    if(priceWithVATEl && state.spotAEDPerGram) {
+      priceWithVATEl.textContent = fmtAED(state.spotAEDPerGram * 1.05);
+    }
+    
+    const commissionInfoEl = document.getElementById('commissionInfo');
+    if(commissionInfoEl) {
+      commissionInfoEl.textContent = VitaNovaLang.t('commissionByType');
+    }
+    
+    // Update statistics display
+    paintStats();
+  }
+  
+  // ======== Chart Functions ========
+  async function fetchPriceHistory(timeframe, startDate = null, endDate = null) {
+    try {
+      let url = `${API_BASE_URL}/price/history?timeframe=${timeframe}`;
+      
+      if (timeframe === 'CUSTOM' && startDate && endDate) {
+        url += `&start_date=${startDate}&end_date=${endDate}`;
+      }
+      
+      const res = await fetch(url);
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      state.priceHistory = data.data || [];
+      state.periodChange = data.period_change;
+      state.periodChangePercent = data.period_change_percent;
+      state.chartStartDate = data.start_date;
+      state.chartEndDate = data.end_date;
+      
+      renderChart();
+      updatePriceChangeDisplay();
+    } catch (e) {
+      console.error('Failed to fetch price history:', e);
+      state.priceHistory = [];
+    }
+  }
+  
+  function updatePriceChangeDisplay() {
+    const changeEl = document.getElementById('priceChange');
+    if (!changeEl) return;
+    
+    const change = state.periodChange;
+    const changePercent = state.periodChangePercent;
+    const isArabic = VitaNovaLang.getLang() === 'ar';
+    
+    if (change !== null && changePercent !== null) {
+      const arrow = change >= 0 ? '↑' : '↓';
+      const sign = change >= 0 ? '+' : '';
+      const timeframeLabel = getTimeframeLabel(state.currentTimeframe);
+      
+      // Build date range string
+      let dateRangeStr = '';
+      if (state.chartStartDate && state.chartEndDate) {
+        const startFormatted = formatDateArabic(state.chartStartDate);
+        const endFormatted = formatDateArabic(state.chartEndDate);
+        
+        if (state.currentTimeframe === '1D') {
+          dateRangeStr = `(${endFormatted})`;
+        } else {
+          dateRangeStr = `(${startFormatted} — ${endFormatted})`;
+        }
+      }
+      
+      const changeText = isArabic ? `التغير خلال ${timeframeLabel}` : `Change over ${timeframeLabel}`;
+      
+      changeEl.innerHTML = `
+        <span>${arrow} ${sign}${change.toFixed(2)} (${sign}${changePercent.toFixed(2)}%)</span>
+        <span class="price-change-period">${changeText} ${dateRangeStr}</span>
+      `;
+      changeEl.className = change >= 0 ? 'price-change' : 'price-change negative';
+    } else {
+      changeEl.innerHTML = '<span>—</span>';
+    }
+  }
+  
+  async function fetchPriceStats() {
+    try {
+      const res = await fetch(`${API_BASE_URL}/price/stats`);
+      if(!res.ok) throw new Error('HTTP ' + res.status);
+      const data = await res.json();
+      state.priceStats = {
+        current: data.current,
+        todayHigh: data.today_high,
+        todayLow: data.today_low,
+        change: data.change,
+        changePercent: data.change_percent
+      };
+      
+      // Update spot price from stats if available and different
+      if (data.current && data.current !== state.spotAEDPerGram) {
+        console.log('📊 Updating spot price from stats:', data.current, '(was:', state.spotAEDPerGram, ')');
+        setPrice(data.current);
+      }
+      
+      paintStats();
+    } catch (e) {
+      console.error('Failed to fetch price stats:', e);
+    }
+  }
+  
+  function paintStats() {
+    const stats = state.priceStats;
+    
+    // Update high/low
+    const highEl = document.getElementById('todayHigh');
+    const lowEl = document.getElementById('todayLow');
+    if(highEl) highEl.textContent = stats.todayHigh ? fmtAED(stats.todayHigh) : '—';
+    if(lowEl) lowEl.textContent = stats.todayLow ? fmtAED(stats.todayLow) : '—';
+  }
+  
+  function renderChart() {
+    const ctx = document.getElementById('priceChart');
+    if (!ctx) return;
+    
+    if (state.chart) {
+      state.chart.destroy();
+    }
+    
+    if (state.priceHistory.length === 0) {
+      return;
+    }
+    
+    const is1D = state.currentTimeframe === '1D';
+    
+    // For 1D, use time-based x-axis with fixed 9 tick positions
+    if (is1D) {
+      renderChart1D(ctx);
+      return;
+    }
+    
+    // For other timeframes, use category-based x-axis
+    renderChartStandard(ctx);
+  }
+  
+  function renderChart1D(ctx) {
+    const locale = VitaNovaLang.getLang() === 'ar' ? 'ar-EG' : 'en-US';
+    
+    // Convert timestamps to hour values (0-24 scale) for proportional positioning
+    const chartData = state.priceHistory
+      .filter(item => item.price !== null)
+      .map(item => {
+        const date = new Date(item.timestamp);
+        const hours = date.getHours();
+        const minutes = date.getMinutes();
+        const seconds = date.getSeconds();
+        // Convert to decimal hours (0-24 scale)
+        // 23:59:59 should map to 24
+        let xValue = hours + minutes / 60 + seconds / 3600;
+        if (hours === 23 && minutes === 59) {
+          xValue = 24;
+        }
+        return {
+          x: xValue,
+          y: item.price,
+          isFixedPoint: item.is_fixed_point !== false
+        };
+      });
+    
+    if (chartData.length === 0) return;
+    
+    // Fixed tick values for x-axis (9 equally spaced points)
+    const fixedTicks = [0, 3, 6, 9, 12, 15, 18, 21, 24];
+    
+    // Time formatter
+    const toTimeFormat = (hour) => {
+      const h = String(Math.floor(hour)).padStart(2, '0');
+      const formatted = h + ':00';
+      if (VitaNovaLang.getLang() === 'ar') {
+        return formatted.replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+      }
+      return formatted;
+    };
+    
+    // Build date label for x-axis title
+    let xAxisLabel = VitaNovaLang.getLang() === 'ar' ? 'تاريخ' : 'Date';
+    if (state.chartEndDate) {
+      xAxisLabel = `${VitaNovaLang.getLang() === 'ar' ? 'تاريخ' : 'Date'} (${formatDateArabic(state.chartEndDate)})`;
+    }
+    
+    state.chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        datasets: [{
+          label: VitaNovaLang.getLang() === 'ar' ? 'سعر الذهب (AED/g)' : 'Gold Price (AED/g)',
+          data: chartData,
+          borderColor: '#FFD700',
+          backgroundColor: 'rgba(255, 215, 0, 0.1)',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4,
+          spanGaps: false,
+          pointRadius: (context) => {
+            // Only show points at fixed 3-hour intervals
+            const point = chartData[context.dataIndex];
+            if (!point || !point.isFixedPoint) return 0;
+            return 4;
+          },
+          pointBackgroundColor: '#FFD700',
+          pointBorderColor: '#1a1613',
+          pointBorderWidth: 2,
+          pointHoverRadius: 7,
+          pointHoverBackgroundColor: '#FFD700',
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            backgroundColor: 'rgba(31, 27, 23, 0.95)',
+            titleColor: '#FFD700',
+            bodyColor: '#fffff0',
+            borderColor: 'rgba(255, 215, 0, 0.3)',
+            borderWidth: 1,
+            padding: 12,
+            displayColors: false,
+            rtl: VitaNovaLang.getLang() === 'ar',
+            textDirection: VitaNovaLang.getLang() === 'ar' ? 'rtl' : 'ltr',
+            callbacks: {
+              title: (context) => {
+                const x = context[0].raw.x;
+                const hours = Math.floor(x);
+                const minutes = Math.round((x - hours) * 60);
+                const timeStr = String(hours).padStart(2, '0') + ':' + String(minutes).padStart(2, '0');
+                if (VitaNovaLang.getLang() === 'ar') {
+                  return timeStr.replace(/[0-9]/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+                }
+                return timeStr;
+              },
+              label: (context) => {
+                return context.raw.y.toFixed(2) + ' AED';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            type: 'linear',
+            min: 0,
+            max: 24,
+            grid: {
+              color: 'rgba(201, 184, 150, 0.1)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#c9b896',
+              stepSize: 3,
+              maxTicksLimit: 9,
+              font: { size: 10 },
+              callback: (value) => {
+                if (fixedTicks.includes(value)) {
+                  return toTimeFormat(value);
+                }
+                return null;
+              }
+            },
+            title: {
+              display: true,
+              text: xAxisLabel,
+              color: '#c9b896',
+              font: { size: 11, weight: '600' },
+              padding: { top: 8 }
+            }
+          },
+          y: {
+            grid: {
+              color: 'rgba(201, 184, 150, 0.1)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#c9b896',
+              maxTicksLimit: 6,
+              font: { size: 10 },
+              callback: (value) => value.toFixed(0)
+            },
+            title: {
+              display: true,
+              text: 'AED',
+              color: '#c9b896',
+              font: { size: 11, weight: '600' },
+              padding: { bottom: 8 }
+            }
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index'
+        }
+      }
+    });
+  }
+  
+  function renderChartStandard(ctx) {
+    const locale = VitaNovaLang.getLang() === 'ar' ? 'ar-EG' : 'en-US';
+    
+    // Standard category-based chart for non-1D timeframes
+    const labels = state.priceHistory.map(item => {
+      const date = new Date(item.timestamp);
+      if (state.currentTimeframe === '1W') {
+        // Show weekday and day
+        return date.toLocaleDateString(locale, { weekday: 'short', day: 'numeric' });
+      } else if (state.currentTimeframe === '1M') {
+        // Show day and month
+        return date.toLocaleDateString(locale, { day: 'numeric', month: 'short' });
+      } else if (state.currentTimeframe === '6M') {
+        // Show day and month
+        return date.toLocaleDateString(locale, { day: 'numeric', month: 'short' });
+      } else if (state.currentTimeframe === '1Y') {
+        // Show month and year
+        return date.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+      } else if (state.currentTimeframe === '5Y' || state.currentTimeframe === '15Y') {
+        // Show month and year
+        return date.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+      } else {
+        // CUSTOM: Adapt based on date span
+        const startDate = new Date(state.chartStartDate);
+        const endDate = new Date(state.chartEndDate);
+        const spanDays = (endDate - startDate) / (1000 * 60 * 60 * 24);
+        
+        if (spanDays <= 1) {
+          return date.toLocaleTimeString(locale, { hour: '2-digit', minute: '2-digit', hour12: false });
+        } else if (spanDays <= 31) {
+          return date.toLocaleDateString(locale, { day: 'numeric', month: 'short' });
+        } else if (spanDays <= 365) {
+          return date.toLocaleDateString(locale, { day: 'numeric', month: 'short' });
+        } else {
+          return date.toLocaleDateString(locale, { month: 'short', year: 'numeric' });
+        }
+      }
+    });
+    
+    const prices = state.priceHistory.map(item => item.price);  // null values will create gaps
+    
+    // Build date range label for x-axis title
+    let xAxisLabel = VitaNovaLang.getLang() === 'ar' ? 'تاريخ' : 'Date';
+    if (state.chartStartDate && state.chartEndDate) {
+      const startFormatted = formatDateArabic(state.chartStartDate);
+      const endFormatted = formatDateArabic(state.chartEndDate);
+      
+      if (state.currentTimeframe === '1D') {
+        xAxisLabel = `${VitaNovaLang.getLang() === 'ar' ? 'تاريخ' : 'Date'} (${endFormatted})`;
+      } else {
+        xAxisLabel = `${VitaNovaLang.getLang() === 'ar' ? 'تاريخ' : 'Date'} (${startFormatted} — ${endFormatted})`;
+      }
+    }
+    
+    // Fixed data points - 9 for 1D, 8 for all others
+    const dataLength = state.priceHistory.length;
+    const maxTicksX = state.currentTimeframe === '1D' ? 9 : 8;
+    const maxTicksY = 6;
+    
+    state.chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: VitaNovaLang.getLang() === 'ar' ? 'سعر الذهب (AED/g)' : 'Gold Price (AED/g)',
+          data: prices,
+          borderColor: '#FFD700',
+          backgroundColor: 'rgba(255, 215, 0, 0.1)',
+          borderWidth: 2,
+          fill: true,
+          tension: 0.4,
+          spanGaps: false,  // Don't connect line across null values
+          pointRadius: (context) => {
+            // Hide points for null values and current time points (non-fixed)
+            const item = state.priceHistory[context.dataIndex];
+            if (context.raw === null) return 0;
+            if (item && item.is_fixed_point === false) return 0;
+            return 4;
+          },
+          pointBackgroundColor: '#FFD700',
+          pointBorderColor: '#1a1613',
+          pointBorderWidth: 2,
+          pointHoverRadius: (context) => {
+            const item = state.priceHistory[context.dataIndex];
+            if (context.raw === null) return 0;
+            if (item && item.is_fixed_point === false) return 0;
+            return 7;
+          },
+          pointHoverBackgroundColor: '#FFD700',
+          pointHoverBorderColor: '#fff',
+          pointHoverBorderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            display: false
+          },
+          tooltip: {
+            backgroundColor: 'rgba(31, 27, 23, 0.95)',
+            titleColor: '#FFD700',
+            bodyColor: '#fffff0',
+            borderColor: 'rgba(255, 215, 0, 0.3)',
+            borderWidth: 1,
+            padding: 12,
+            displayColors: false,
+            rtl: VitaNovaLang.getLang() === 'ar',
+            textDirection: VitaNovaLang.getLang() === 'ar' ? 'rtl' : 'ltr',
+            filter: function(tooltipItem) {
+              // Don't show tooltip for null values
+              return tooltipItem.raw !== null;
+            },
+            callbacks: {
+              title: function(context) {
+                // For current time point, show actual time
+                const item = state.priceHistory[context[0].dataIndex];
+                if (item && item.is_current_time) {
+                  const date = new Date(item.timestamp);
+                  const currentTimeLabel = VitaNovaLang.getLang() === 'ar' ? 'الوقت الحالي: ' : 'Current time: ';
+                  return currentTimeLabel + date.toLocaleTimeString(VitaNovaLang.getLang() === 'ar' ? 'ar-EG' : 'en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+                }
+                return context[0].label;
+              },
+              label: function(context) {
+                if (context.parsed.y === null) return '';
+                return context.parsed.y.toFixed(2) + ' AED';
+              }
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: {
+              color: 'rgba(201, 184, 150, 0.1)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#c9b896',
+              maxRotation: 45,
+              minRotation: 0,
+              autoSkip: false,
+              maxTicksLimit: maxTicksX,
+              font: {
+                size: 10
+              },
+              callback: function(value, index) {
+                // Hide labels for non-fixed points (current time point)
+                const label = labels[index];
+                return label === '' ? null : label;
+              }
+            },
+            title: {
+              display: true,
+              text: xAxisLabel,
+              color: '#c9b896',
+              font: {
+                size: 11,
+                weight: '600'
+              },
+              padding: { top: 8 }
+            }
+          },
+          y: {
+            grid: {
+              color: 'rgba(201, 184, 150, 0.1)',
+              drawBorder: false
+            },
+            ticks: {
+              color: '#c9b896',
+              maxTicksLimit: maxTicksY,
+              font: {
+                size: 10
+              },
+              callback: function(value) {
+                return value.toFixed(0);
+              }
+            },
+            title: {
+              display: true,
+              text: 'AED',
+              color: '#c9b896',
+              font: {
+                size: 11,
+                weight: '600'
+              },
+              padding: { bottom: 8 }
+            }
+          }
+        },
+        interaction: {
+          intersect: false,
+          mode: 'index'
+        }
+      }
+    });
+  }
+
+  async function refreshPrice(){
+    if(state.mode !== "api") {
+      console.log('⏸️ Skipping refreshPrice - mode is:', state.mode);
+      return;
+    }
+    if(!state.apiUrl || !state.jsonPath) {
+      console.warn('⚠️ Cannot refreshPrice - apiUrl or jsonPath not set:', { apiUrl: state.apiUrl, jsonPath: state.jsonPath });
+      return;
+    }
+    
+    // Debounce check for manual refreshes
+    const now = Date.now();
+    if (now - lastApiCallTimestamp < MIN_API_CALL_INTERVAL) {
+      console.log('⏸️ Debouncing API call - last call was', Math.round((now - lastApiCallTimestamp) / 1000), 'seconds ago');
+      // For manual refresh, we still update the display with cached data
+      paintTicker();
+      updateFinals();
+      return;
+    }
+
+    try{
+      console.log('\n📡 ========== API CALL ==========');
+      console.log('📡 Time:', new Date().toLocaleTimeString());
+      console.log('📡 URL:', state.apiUrl);
+      
+      lastApiCallTimestamp = now; // Update timestamp BEFORE the call
+      
+      const res = await fetch(state.apiUrl, { method: "GET" });
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      console.log('📡 Response received:', data);
+      
+      const val = get(data, state.jsonPath);
+      console.log('🔍 Extracted value from path "' + state.jsonPath + '":', val);
+
+      const p = Number(val);
+      if(!Number.isFinite(p) || p <= 0) throw new Error("Bad price path");
+      
+      console.log('✅ Setting price to:', p, 'AED/gram');
+      console.log('📡 ================================\n');
+      setPrice(p);
+    }catch(e){
+      console.error("❌ API refresh failed:", e);
+      // Reset timestamp on failure to allow retry sooner
+      lastApiCallTimestamp = now - (MIN_API_CALL_INTERVAL / 2);
+    }
+  }
+
+  // ======== Custom Date Picker ========
+  window.openCustomDatePicker = function() {
+    const modal = document.getElementById('datePickerModal');
+    const startInput = document.getElementById('customStartDate');
+    const endInput = document.getElementById('customEndDate');
+    
+    // Set max date to today
+    const today = new Date().toISOString().split('T')[0];
+    endInput.max = today;
+    startInput.max = today;
+    
+    // Set default values
+    if (!startInput.value) {
+      startInput.value = '2020-01-01';
+    }
+    if (!endInput.value) {
+      endInput.value = today;
+    }
+    
+    modal.style.display = 'flex';
+  };
+  
+  function closeCustomDatePicker() {
+    document.getElementById('datePickerModal').style.display = 'none';
+  }
+  
+  function applyCustomDates() {
+    const startInput = document.getElementById('customStartDate');
+    const endInput = document.getElementById('customEndDate');
+    
+    const startDate = startInput.value;
+    const endDate = endInput.value;
+    
+    if (!startDate || !endDate) {
+      alert(VitaNovaLang.t('alertSelectDates'));
+      return;
+    }
+    
+    if (new Date(startDate) > new Date(endDate)) {
+      alert(VitaNovaLang.t('alertInvalidDateRange'));
+      return;
+    }
+    
+    state.currentTimeframe = 'CUSTOM';
+    state.customStartDate = startDate;
+    state.customEndDate = endDate;
+    
+    // Update active button
+    document.querySelectorAll('.timeframe-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.timeframe === 'CUSTOM');
+    });
+    
+    fetchPriceHistory('CUSTOM', startDate, endDate);
+    closeCustomDatePicker();
+  }
+  
+  // Event listeners for date picker
+  document.getElementById('applyCustomDates').addEventListener('click', applyCustomDates);
+  document.getElementById('cancelCustomDates').addEventListener('click', closeCustomDatePicker);
+  document.getElementById('datePickerModal').addEventListener('click', (e) => {
+    if (e.target === document.getElementById('datePickerModal')) {
+      closeCustomDatePicker();
+    }
+  });
+
+  // ======== Checkout / Lock ========
+  const lockTimer = $("lockTimer");
+  const coSpot = $("coSpot");
+  const coFinal = $("coFinal");
+  const cuName = $("cuName");
+  const cuPhone = $("cuPhone");
+  const cuEmirate = $("cuEmirate");
+  const cuCity = $("cuCity");
+  const cuPay = $("cuPay");
+  const cuAddr = $("cuAddr");
+
+  function startLock(){
+    if(state.spotAEDPerGram === null){
+      alert(VitaNovaLang.t('alertSetPrice'));
+      return null;
+    }
+    if(getCartItemCount() === 0){
+      alert(VitaNovaLang.t('alertEmptyCart'));
+      return null;
+    }
+    
+    const spot = state.spotAEDPerGram;
+    const commType = state.commissionType;
+    const cartItems = [];
+    let totalFee = 0;
+    let totalWeight = 0;
+    
+    for(const [weight, qty] of Object.entries(state.cart)){
+      const fee = calculateFee(weight, qty);
+      const commLabel = getCommissionLabel(weight);
+      const w = Number(weight) * qty;
+      totalFee += fee;
+      totalWeight += w;
+      cartItems.push({ weight, qty, fee, commLabel });
+    }
+    
+    const totalGoldCost = spot * totalWeight;
+    const totalVAT = totalGoldCost * 0.05;
+    const final = totalGoldCost * 1.05 + totalFee;
+    const startedAt = Date.now();
+    const expiresAt = startedAt + LOCK_MS;
+
+    state.lock = { startedAt, expiresAt, spot, cartItems, totalWeight, totalFee, totalVAT, final, commType };
+    saveState();
+
+    cuPay.value = "online";
+    return state.lock;
+  }
+
+  function lockRemainingMs(){
+    if(!state.lock) return 0;
+    return Math.max(0, state.lock.expiresAt - Date.now());
+  }
+
+  function formatRemaining(ms){
+    const s = Math.floor(ms/1000);
+    const mm = String(Math.floor(s/60)).padStart(2,"0");
+    const ss = String(s%60).padStart(2,"0");
+    return `${mm}:${ss}`;
+  }
+
+  function openCheckout(){
+    const lock = startLock();
+    if(!lock) return;
+
+    const commTypeName = lock.commType === "fixed" ? VitaNovaLang.t('fixedCommission') : VitaNovaLang.t('percentCommission');
+    let itemsHtml = '';
+    for(const item of lock.cartItems){
+      const goldCost = lock.spot * Number(item.weight) * item.qty;
+      const vatAmount = goldCost * 0.05;
+      const itemTotal = goldCost * 1.05 + item.fee;
+      const unitPrice = lock.spot * Number(item.weight);
+      
+      itemsHtml += `
+        <div style="padding:8px 0;border-bottom:1px solid var(--line)">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">
+            <div>
+              <strong style="font-size:15px">${item.weight}g × ${item.qty}</strong>
+              <span style="color:var(--muted);font-size:12px;margin-inline-start:8px">${fmtAED(unitPrice)} ${VitaNovaLang.t('perUnit')}</span>
+            </div>
+            <div style="text-align:end">
+              <div style="font-weight:700;color:var(--good)">${fmtAED(itemTotal)}</div>
+              <div style="font-size:11px;color:var(--muted)">${VitaNovaLang.t('includesVat')} ${fmtAED(vatAmount)}</div>
+              <div style="font-size:11px;color:var(--muted)">${VitaNovaLang.t('includesCommission')} ${item.commLabel} (${fmtAED(item.fee)})</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+    
+    $("coCartItems").innerHTML = itemsHtml || `<div style="color:var(--muted)">${VitaNovaLang.t('emptyCart')}</div>`;
+    coSpot.value = fmtAED(lock.spot);
+    $("coTotalWeight").textContent = lock.totalWeight + "g";
+    $("coTotalVAT").innerHTML = `
+      <div>${fmtAED(lock.totalVAT)}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">${VitaNovaLang.t('vatPercent')}</div>
+    `;
+    $("coTotalFee").innerHTML = `
+      <div>${fmtAED(lock.totalFee)}</div>
+      <div style="font-size:11px;color:var(--muted);margin-top:2px">${VitaNovaLang.t('total')} ${commTypeName}</div>
+    `;
+    coFinal.value = fmtAED(lock.final);
+
+    checkoutBack.style.display = "flex";
+    tickLock();
+  }
+
+  function closeCheckout(){
+    checkoutBack.style.display = "none";
+  }
+
+  function tickLock(){
+    if(!checkoutBack || checkoutBack.style.display !== "flex") return;
+    const rem = lockRemainingMs();
+    lockTimer.textContent = formatRemaining(rem);
+
+    if(rem <= 0){
+      state.lock = null;
+      saveState();
+      alert(VitaNovaLang.t('alertPriceLockExpired'));
+      closeCheckout();
+      return;
+    }
+    requestAnimationFrame(() => setTimeout(tickLock, 250));
+  }
+
+  // ======== Dealer WhatsApp Message ========
+  function buildOrderSummary(){
+    if(!state.lock) return null;
+    const lock = state.lock;
+
+    const name = (cuName.value || "").trim();
+    const phone = (cuPhone.value || "").trim();
+    const emirate = cuEmirate.options[cuEmirate.selectedIndex].text;
+    const city = (cuCity.value || "").trim();
+    const pay = cuPay.value === "cod" ? (VitaNovaLang.getLang() === 'ar' ? "الدفع عند الاستلام" : "Cash on Delivery") : (VitaNovaLang.getLang() === 'ar' ? "الدفع أونلاين" : "Pay Online");
+    const addr = (cuAddr.value || "").trim();
+
+    if(!name || !phone || !addr){
+      alert(VitaNovaLang.t('alertFillFields'));
+      return null;
+    }
+    
+    let itemsText = '';
+    for(const item of lock.cartItems){
+      const goldCost = lock.spot * Number(item.weight) * item.qty;
+      const vatAmount = goldCost * 0.05;
+      const itemTotal = goldCost * 1.05 + item.fee;
+      const vatLabel = VitaNovaLang.getLang() === 'ar' ? 'يشمل ضريبة' : 'includes VAT';
+      const commLabel = VitaNovaLang.getLang() === 'ar' ? 'عمولة' : 'commission';
+      itemsText += `\n  - ${item.weight}g × ${item.qty} = ${itemTotal.toFixed(2)} AED (${vatLabel} ${vatAmount.toFixed(2)} AED + ${commLabel} ${item.fee} AED)`;
+    }
+
+    const isAr = VitaNovaLang.getLang() === 'ar';
+    const lines = isAr ? [
+      "طلب سبائك ذهب — MVP",
+      "----------------------",
+      `الاسم: ${name}`,
+      `الهاتف: ${phone}`,
+      `الإمارة: ${emirate}`,
+      city ? `المدينة: ${city}` : null,
+      `المنتجات:${itemsText}`,
+      `الوزن الإجمالي: ${lock.totalWeight}g`,
+      `سعر الجرام المثبت: ${lock.spot.toFixed(2)} AED`,
+      `الضريبة الإجمالية (5%): ${lock.totalVAT.toFixed(2)} AED`,
+      `العمولة الإجمالية: ${lock.totalFee.toFixed(2)} AED`,
+      `السعر النهائي: ${lock.final.toFixed(2)} AED`,
+      `طريقة الدفع: ${pay}`,
+      `العنوان: ${addr}`,
+      `وقت الطلب: ${nowISO()}`,
+      "",
+      "ملاحظة: السعر مثبت 15 دقيقة من وقت بدء الطلب."
+    ] : [
+      "Gold Bullion Order — MVP",
+      "----------------------",
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      `Emirate: ${emirate}`,
+      city ? `City: ${city}` : null,
+      `Products:${itemsText}`,
+      `Total Weight: ${lock.totalWeight}g`,
+      `Locked Price per Gram: ${lock.spot.toFixed(2)} AED`,
+      `Total VAT (5%): ${lock.totalVAT.toFixed(2)} AED`,
+      `Total Commission: ${lock.totalFee.toFixed(2)} AED`,
+      `Final Price: ${lock.final.toFixed(2)} AED`,
+      `Payment Method: ${pay}`,
+      `Address: ${addr}`,
+      `Order Time: ${nowISO()}`,
+      "",
+      "Note: Price locked for 15 minutes from order start."
+    ];
+    return lines.filter(Boolean).join("\n");
+  }
+
+  function openWhatsApp(number, message){
+    const encoded = encodeURIComponent(message);
+    const url = `https://wa.me/${number}?text=${encoded}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+  }
+
+  // ======== Events ========
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("open-settings-btn")) {
+      const adminPanel = document.getElementById('adminControlPanel');
+      if (adminPanel && adminPanel.contains(e.target)) {
+        adminPanel.style.display = 'none';
+      }
+      settingsBack.style.display = "flex";
+    }
+  });
+  
+  $("closeSettings").addEventListener("click", () => { 
+    settingsBack.style.display = "none";
+    document.getElementById('adminControlPanel').style.display = 'flex';
+  });
+  
+  settingsBack.addEventListener("click", (e) => { 
+    if(e.target === settingsBack) {
+      settingsBack.style.display = "none";
+      document.getElementById('adminControlPanel').style.display = 'flex';
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (e.target.classList.contains("open-commission-btn")) {
+      const adminPanel = document.getElementById('adminControlPanel');
+      if (adminPanel && adminPanel.contains(e.target)) {
+        adminPanel.style.display = 'none';
+      }
+      const commissionBack = document.getElementById('commissionBack');
+      if(commissionBack) {
+        commissionBack.style.display = "flex";
+        initializeCommissionModal();
+      }
+    }
+  });
+  
+  function initializeCommissionModal() {
+    document.querySelectorAll('.commission-type-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    const activeBtn = state.commissionType === 'fixed' 
+      ? document.getElementById('commTypeFixed')
+      : document.getElementById('commTypePercent');
+    if(activeBtn) activeBtn.classList.add('active');
+    
+    const unit = state.commissionType === 'fixed' ? 'AED' : '%';
+    document.querySelectorAll('.commission-unit').forEach(span => {
+      span.textContent = unit;
+    });
+    
+    const comm1 = $("comm_1");
+    const comm25 = $("comm_2.5");
+    const comm5 = $("comm_5");
+    const comm10 = $("comm_10");
+    
+    if(comm1) comm1.value = state.commissionValues["1"] || 0;
+    if(comm25) comm25.value = state.commissionValues["2.5"] || 0;
+    if(comm5) comm5.value = state.commissionValues["5"] || 0;
+    if(comm10) comm10.value = state.commissionValues["10"] || 0;
+    
+    const note = state.commissionType === 'fixed'
+      ? VitaNovaLang.t('fixedCommissionNote')
+      : VitaNovaLang.t('percentCommissionNote');
+    const noteElement = document.getElementById('commissionNote');
+    if(noteElement) noteElement.textContent = note;
+  }
+
+  document.addEventListener("click", (e) => {
+    if(e.target && e.target.id === "closeCommission") {
+      const commissionBack = document.getElementById('commissionBack');
+      if(commissionBack) commissionBack.style.display = "none";
+      document.getElementById('adminControlPanel').style.display = 'flex';
+    }
+  });
+  
+  document.addEventListener("click", (e) => {
+    const commissionBack = document.getElementById('commissionBack');
+    if(e.target === commissionBack) {
+      commissionBack.style.display = "none";
+      document.getElementById('adminControlPanel').style.display = 'flex';
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if(e.target && e.target.classList.contains('commission-type-btn')) {
+      const type = e.target.getAttribute('data-type');
+      state.commissionType = type;
+      
+      document.querySelectorAll('.commission-type-btn').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      
+      const unit = type === 'fixed' ? 'AED' : '%';
+      document.querySelectorAll('.commission-unit').forEach(span => {
+        span.textContent = unit;
+      });
+      
+      const note = type === 'fixed'
+        ? VitaNovaLang.t('fixedCommissionNote')
+        : VitaNovaLang.t('percentCommissionNote');
+      const noteEl = document.getElementById('commissionNote');
+      if(noteEl) noteEl.textContent = note;
+      
+      paintTicker();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if(e.target && e.target.id === "saveCommission") {
+      const comm1 = $("comm_1");
+      const comm25 = $("comm_2.5");
+      const comm5 = $("comm_5");
+      const comm10 = $("comm_10");
+      
+      state.commissionValues = {
+        "1": comm1 ? Number(comm1.value) || 0 : 0,
+        "2.5": comm25 ? Number(comm25.value) || 0 : 0,
+        "5": comm5 ? Number(comm5.value) || 0 : 0,
+        "10": comm10 ? Number(comm10.value) || 0 : 0
+      };
+      
+      saveState();
+      renderProducts();
+      renderCart();
+      updateFinals();
+      paintTicker();
+      
+      alert(VitaNovaLang.t('alertCommissionSaved'));
+      
+      const commissionBack = document.getElementById('commissionBack');
+      if(commissionBack) commissionBack.style.display = "none";
+      document.getElementById('adminControlPanel').style.display = 'flex';
+    }
+  });
+
+  $("closeCheckout").addEventListener("click", closeCheckout);
+  checkoutBack.addEventListener("click", (e) => { if(e.target === checkoutBack) closeCheckout(); });
+  
+  $("openCartBtn").addEventListener("click", openCartPanel);
+  $("closeCartBtn").addEventListener("click", closeCartPanel);
+  
+  $("checkoutBtn").addEventListener("click", () => {
+    if(getCartItemCount() === 0) {
+      alert(VitaNovaLang.t('alertEmptyCart'));
+      return;
+    }
+    if(!state.spotAEDPerGram) {
+      alert(VitaNovaLang.t('alertSetPrice'));
+      return;
+    }
+    openCheckout();
+    closeCartPanel();
+  });
+
+  $("refreshNow").addEventListener("click", async () => {
+    if(state.mode === "api"){
+      await refreshPrice();
+      paintTicker();
+      updateFinals();
+      await fetchPriceStats();
+      
+      if (state.currentTimeframe === 'CUSTOM' && state.customStartDate && state.customEndDate) {
+        await fetchPriceHistory('CUSTOM', state.customStartDate, state.customEndDate);
+      } else {
+        await fetchPriceHistory(state.currentTimeframe);
+      }
+    } else {
+      paintTicker();
+      updateFinals();
+    }
+  });
+  
+  // ======== Global Timeframe Change Function ========
+  window.changeTimeframe = function(timeframe) {
+    if (timeframe === 'CUSTOM') {
+      openCustomDatePicker();
+      return;
+    }
+    
+    state.currentTimeframe = timeframe;
+    fetchPriceHistory(timeframe);
+    
+    // Update active button
+    document.querySelectorAll('.timeframe-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.timeframe === timeframe);
+    });
+  };
+
+  $("saveManual").addEventListener("click", () => {
+    const v = Number($("manualPrice").value);
+    if(!setPrice(v)) return alert(VitaNovaLang.t('alertInvalidPrice'));
+    alert(VitaNovaLang.t('alertPriceSaved'));
+  });
+  
+  $("useManualMode").addEventListener("click", () => {
+    state.mode = "manual";
+    saveState();
+    paintTicker();
+    alert(VitaNovaLang.t('alertManualMode'));
+  });
+
+  $("enableApiMode").addEventListener("click", () => {
+    const url = $("apiUrl").value = state.apiUrl || $("apiUrl").value || "";
+    const path = $("jsonPath").value = state.jsonPath || $("jsonPath").value || "";
+    if(!url || !path) return alert(VitaNovaLang.t('alertEnterApiDetails'));
+    state.apiUrl = url;
+    state.jsonPath = path;
+    state.mode = "api";
+    saveState();
+    paintTicker();
+    alert(VitaNovaLang.t('alertApiMode'));
+  });
+
+  $("testApi").addEventListener("click", async () => {
+    const url = $("apiUrl").value = state.apiUrl || $("apiUrl").value || "";
+    const path = $("jsonPath").value = state.jsonPath || $("jsonPath").value || "";
+    if(!url || !path) return alert(VitaNovaLang.t('alertEnterApiDetails'));
+    try{
+      const res = await fetch(url);
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+      const val = get(data, path);
+      const p = Number(val);
+      if(!Number.isFinite(p) || p <= 0) throw new Error("Bad path");
+      alert(VitaNovaLang.t('alertApiTestSuccess') + " " + p.toFixed(2) + " AED/gram");
+    }catch(e){
+      alert(VitaNovaLang.t('alertApiTestFailed'));
+    }
+  });
+
+  $("sendToDealer").addEventListener("click", async () => {
+    console.log('\n========== CHECKOUT STARTED ==========');
+    
+    // Validate checkout form
+    const lock = state.lock;
+    if (!lock) {
+      alert(VitaNovaLang.t('alertEmptyCart'));
+      return;
+    }
+    
+    console.log('🔒 Lock data:', lock);
+    
+    const name = (cuName.value || "").trim();
+    const phone = (cuPhone.value || "").trim();
+    const emirate = cuEmirate.options[cuEmirate.selectedIndex].text;
+    const city = (cuCity.value || "").trim();
+    const addr = (cuAddr.value || "").trim();
+    
+    console.log('📝 Form data:', { name, phone, emirate, city, addr });
+    
+    if (!name || !phone || !addr) {
+      alert(VitaNovaLang.t('alertFillFields'));
+      return;
+    }
+    
+    // Get user data from localStorage
+    const storedUser = localStorage.getItem('vitanova_user');
+    console.log('👤 Stored user raw:', storedUser);
+    
+    let userData = null;
+    try {
+      userData = storedUser ? JSON.parse(storedUser) : null;
+    } catch(e) {
+      console.error('❌ Failed to parse user data:', e);
+    }
+    
+    console.log('👤 User data parsed:', userData);
+    
+    let orderId = null;
+    let orderSaved = false;
+    
+    // Check if user is logged in with customer_id
+    if (!userData || !userData.customer_id) {
+      console.warn('⚠️ User not logged in or no customer_id - order will NOT be saved to database');
+      alert(VitaNovaLang.t('alertLoginRequired'));
+    } else {
+      // User is logged in - save order to backend
+      try {
+        const paymentType = cuPay.value === "cod" ? "Cash on Delivery" : "Online Payment";
+        
+        // Prepare order items - use the cart items from lock
+        const items = lock.cartItems.map(item => {
+          const commissionPerUnit = item.qty > 0 ? item.fee / item.qty : item.fee;
+          return {
+            weight: item.weight,
+            quantity: item.qty,
+            commission: commissionPerUnit
+          };
+        });
+        
+        const orderData = {
+          customer_id: userData.customer_id,
+          items: items,
+          gold_price_gram: lock.spot,
+          commission_type: state.commissionType || 'fixed',
+          whatsapp_number: phone,
+          emirate: emirate,
+          city: city || '',
+          address: addr,
+          payment_type: paymentType
+        };
+        
+        console.log('📦 ORDER DATA TO SEND:', JSON.stringify(orderData, null, 2));
+        
+        const response = await fetch(`${API_BASE_URL}/orders/create`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(orderData)
+        });
+        
+        console.log('📡 Response status:', response.status);
+        
+        const responseText = await response.text();
+        console.log('📡 Response body:', responseText);
+        
+        if (response.ok) {
+          try {
+            const result = JSON.parse(responseText);
+            orderId = result.order_id;
+            orderSaved = true;
+            console.log('✅ ORDER SAVED! Order ID:', orderId);
+            alert(`${VitaNovaLang.t('alertOrderSaved')} ${orderId}`);
+          } catch(e) {
+            console.error('❌ Failed to parse success response:', e);
+          }
+        } else {
+          console.error('❌ Server returned error:', response.status, responseText);
+          alert(`${VitaNovaLang.t('error')}: ${responseText}`);
+        }
+      } catch (error) {
+        console.error('❌ Network/fetch error:', error);
+        alert(`${VitaNovaLang.t('error')}: ${error.message}`);
+      }
+    }
+    
+    // Clear cart and close checkout
+    state.cart = {};
+    state.lock = null;
+    saveState();
+    renderCart();
+    renderProducts();
+    checkoutBack.style.display = "none";
+    
+    // Open WhatsApp
+    if (orderId) {
+      const message = `Hey! I just made an order. My order ID is ${orderId}.`;
+      openWhatsApp(DEALER_WHATSAPP, message);
+    } else {
+      const message = `Hey! I just made an order.`;
+      openWhatsApp(DEALER_WHATSAPP, message);
+    }
+    
+    console.log('========== CHECKOUT COMPLETED ==========\n');
+  });
+
+  $("copySummary").addEventListener("click", async () => {
+    const msg = buildOrderSummary();
+    if(!msg) return;
+    try{
+      await navigator.clipboard.writeText(msg);
+      alert(VitaNovaLang.t('alertCopied'));
+    }catch(e){
+      alert(VitaNovaLang.t('alertCopyFailed'));
+    }
+  });
+
+  // ======== Language Change Handler ========
+  window.addEventListener('languageChanged', function(e) {
+    // Update page title
+    document.title = VitaNovaLang.getLang() === 'ar' 
+      ? 'سبائك ذهب عيار 24 — تسليم داخل الإمارات'
+      : '24K Gold Bullion — UAE Delivery';
+    
+    // Re-render dynamic content
+    renderProducts();
+    renderCart();
+    paintTicker();
+    updatePriceChangeDisplay();
+    
+    // Re-render chart if exists
+    if (state.chart && state.priceHistory.length > 0) {
+      renderChart();
+    }
+  });
+
+  // ======== Init ========
+  loadState();
+  
+  // Initialize API settings based on environment
+  // Force update URL if switching environments
+  const expectedApiUrl = `${API_BASE_URL}/price`;
+  const defaultJsonPath = 'price';
+  
+  if (!state.apiUrl || !state.jsonPath || !state.apiUrl.startsWith(API_BASE_URL)) {
+    state.apiUrl = expectedApiUrl;
+    if (!state.jsonPath) state.jsonPath = defaultJsonPath;
+    
+    saveState();
+    console.log(`✅ API settings configured for ${ENVIRONMENT}:`, { apiUrl: state.apiUrl, jsonPath: state.jsonPath });
+  }
+  
+  renderProducts();
+  renderCart();
+  paintTicker();
+
+  // Initial API fetch on page load
+  console.log('\n🎬 ========== PAGE LOAD ==========');
+  console.log('📅 Time:', new Date().toLocaleTimeString());
+  console.log('📊 Mode:', state.mode);
+  
+  if (state.mode === "api") {
+    // Set initial timestamp to allow immediate first call
+    lastApiCallTimestamp = 0;
+    
+    refreshPrice().then(() => {
+      console.log('✅ Initial price loaded successfully');
+      // Fetch stats and history after getting current price
+      fetchPriceStats();
+      fetchPriceHistory(state.currentTimeframe);
+    }).catch(err => {
+      console.error('❌ Initial price load failed:', err);
+    });
+  } else {
+    console.log('⏸️ Manual mode - skipping API fetch');
+    // Even in manual mode, try to get stats and history if backend is running
+    fetchPriceStats().catch(() => {});
+    fetchPriceHistory(state.currentTimeframe).catch(() => {});
+  }
+  
+  console.log('🎬 ================================\n');
+
+  $("manualPrice").value = state.spotAEDPerGram ? String(state.spotAEDPerGram) : "";
+  $("apiUrl").value = state.apiUrl || $("apiUrl").value || "";
+  $("jsonPath").value = state.jsonPath || $("jsonPath").value || "";
+
+  if(state.lock && Date.now() > state.lock.expiresAt){
+    state.lock = null;
+    saveState();
+  }
+
+  // ======== SINGLETON INTERVAL SETUP ========
+  // Clear any existing interval before creating a new one
+  function startPriceRefreshInterval() {
+    // Clear existing interval if any
+    if (priceRefreshIntervalId !== null) {
+      console.log('🔄 Clearing existing price refresh interval:', priceRefreshIntervalId);
+      clearInterval(priceRefreshIntervalId);
+      priceRefreshIntervalId = null;
+    }
+    
+    // Create new interval - fires exactly every 60 seconds
+    priceRefreshIntervalId = setInterval(async () => {
+      if (state.mode === "api") {
+        console.log(`\n[${SESSION_ID}] ========== SCHEDULED API REFRESH ==========`);
+        console.log(`[${SESSION_ID}] ⏰ Time: ${new Date().toLocaleTimeString()}`);
+        
+        // refreshPrice() has its own debounce logic, so just call it
+        await refreshPrice();
+        await fetchPriceStats();
+        
+        console.log(`[${SESSION_ID}] ✅ Scheduled refresh complete`);
+        console.log(`[${SESSION_ID}] ⏳ Next refresh in 60 seconds`);
+        console.log(`[${SESSION_ID}] ==========================================\n`);
+      }
+    }, REFRESH_MS);
+    
+    console.log(`\n[${SESSION_ID}] 🚀 Price refresh interval started`);
+    console.log(`[${SESSION_ID}]    Interval ID: ${priceRefreshIntervalId}`);
+    console.log(`[${SESSION_ID}]    Refresh every: ${REFRESH_MS / 1000} seconds`);
+    console.log(`[${SESSION_ID}]    Mode: ${state.mode}`);
+  }
+  
+  // Start the interval
+  startPriceRefreshInterval();
+  
+  // Clean up on page unload to prevent memory leaks
+  window.addEventListener('beforeunload', () => {
+    if (priceRefreshIntervalId !== null) {
+      console.log(`[🧹 ${SESSION_ID}] Cleaning up interval on page unload`);
+      clearInterval(priceRefreshIntervalId);
+    }
+  });
+  
+  // Pause/Resume interval when tab visibility changes
+  // This prevents multiple tabs from all making API calls simultaneously
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      console.log(`[${SESSION_ID}] 👁️ Tab hidden - interval continues but API calls will be debounced`);
+    } else {
+      console.log(`[${SESSION_ID}] 👁️ Tab visible - checking if refresh needed`);
+      // If more than 60 seconds since last call, trigger a refresh
+      const timeSinceLastCall = Date.now() - lastApiCallTimestamp;
+      if (timeSinceLastCall > REFRESH_MS && state.mode === "api") {
+        console.log(`[${SESSION_ID}] ⏰ ${Math.round(timeSinceLastCall / 1000)}s since last refresh - triggering update`);
+        refreshPrice().then(() => {
+          fetchPriceStats();
+        });
+      }
+    }
+  });
+
+})();
+
+// ======== Admin Authentication ========
+function openAdminLogin(){
+  if(sessionStorage.getItem('adminLoggedIn') === 'true'){
+    document.getElementById('adminControlPanel').style.display = 'flex';
+    return;
+  }
+  
+  const loginModal = document.getElementById('adminLoginModal');
+  loginModal.style.display = 'flex';
+  document.getElementById('adminUsername').value = '';
+  document.getElementById('adminPassword').value = '';
+  document.getElementById('adminLoginError').textContent = '';
+}
+
+function closeAdminLogin(){
+  document.getElementById('adminLoginModal').style.display = 'none';
+}
+
+function attemptAdminLogin(){
+  const username = document.getElementById('adminUsername').value.trim();
+  const password = document.getElementById('adminPassword').value;
+  const errorDiv = document.getElementById('adminLoginError');
+  
+  if(username === 'admin' && password === '123'){
+    sessionStorage.setItem('adminLoggedIn', 'true');
+    closeAdminLogin();
+    document.getElementById('adminControlPanel').style.display = 'flex';
+  } else {
+    errorDiv.textContent = VitaNovaLang.t('alertWrongCredentials');
+  }
+}
+
+function closeAdminPanel(){
+  document.getElementById('adminControlPanel').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  const usernameInput = document.getElementById('adminUsername');
+  const passwordInput = document.getElementById('adminPassword');
+  
+  if(usernameInput && passwordInput){
+    usernameInput.addEventListener('keypress', function(e){
+      if(e.key === 'Enter') attemptAdminLogin();
+    });
+    passwordInput.addEventListener('keypress', function(e){
+      if(e.key === 'Enter') attemptAdminLogin();
+    });
+  }
+  
+  // Set up login/register links IMMEDIATELY with redirect to current page
+  const currentPage = window.location.pathname.split('/').pop() || 'store.html';
+  const loginLink = document.getElementById('loginLink');
+  const registerLink = document.getElementById('registerLink');
+  
+  if(loginLink) loginLink.href = `login.html?redirect=${encodeURIComponent(currentPage)}`;
+  if(registerLink) registerLink.href = `register.html?redirect=${encodeURIComponent(currentPage)}`;
+  
+  // Initialize auth state
+  checkAuthStatus();
+});
+
+// ======== Authentication Functions ========
+// NOTE: AUTH_API_BASE uses the same configuration as the main store.
+// When deploying to production, update BOTH the ENVIRONMENT variable at the top of the script
+// AND this URL to match your Google Cloud Run URL.
+const AUTH_API_BASE = (() => {
+  // DEPLOYMENT CONFIGURATION - Must match the main store configuration!
+  const ENVIRONMENT = 'development'; // 'development' | 'production'
+  const API_URLS = {
+    development: 'http://127.0.0.1:5000',
+    production: 'https://goldapi-292134033818.europe-west1.run.app' // <-- UPDATE THIS for Google Cloud
+  };
+  return API_URLS[ENVIRONMENT];
+})();
+
+async function checkAuthStatus(){
+  // First check localStorage (most reliable for this MVP)
+  const storedUser = localStorage.getItem('vitanova_user');
+  if(storedUser){
+    try{
+      const user = JSON.parse(storedUser);
+      console.log('User found in localStorage:', user);
+      showLoggedInState(user);
+      return;
+    } catch(e){
+      console.log('Error parsing stored user:', e);
+      localStorage.removeItem('vitanova_user');
+    }
+  }
+  
+  // Then try backend session as fallback
+  try{
+    const response = await fetch(`${AUTH_API_BASE}/auth/check`, {
+      credentials: 'include'
+    });
+    const data = await response.json();
+    
+    if(data.authenticated && data.user){
+      console.log('User authenticated via backend session:', data.user);
+      showLoggedInState(data.user);
+    } else {
+      console.log('No authenticated user found');
+      showGuestState();
+    }
+  } catch(error){
+    console.log('Auth check failed:', error);
+    showGuestState();
+  }
+}
+
+function showLoggedInState(user){
+  const guestAuth = document.getElementById('guestAuth');
+  const userAuth = document.getElementById('userAuth');
+  
+  if(guestAuth) guestAuth.style.display = 'none';
+  if(userAuth) userAuth.style.display = 'flex';
+  
+  // Store user data
+  localStorage.setItem('vitanova_user', JSON.stringify(user));
+}
+
+function showGuestState(){
+  const guestAuth = document.getElementById('guestAuth');
+  const userAuth = document.getElementById('userAuth');
+  
+  if(guestAuth) guestAuth.style.display = 'flex';
+  if(userAuth) userAuth.style.display = 'none';
+  
+  localStorage.removeItem('vitanova_user');
+}
+
+
+</script>
+
+<!-- Professional Footer -->
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-sections">
+      <!-- About Section -->
+      <div class="footer-section">
+        <h4>Vita Nova</h4>
+        <p style="color:var(--muted);font-size:14px;line-height:1.7;margin:0" data-i18n="footerAbout">
+          منصة موثوقة لبيع سبائك الذهب عيار 24 داخل الإمارات. نقدم أسعارًا شفافة وتسليمًا سريعًا مع ضمان الجودة.
+        </p>
+      </div>
+      
+      <!-- Quick Links Section -->
+      <div class="footer-section">
+        <h4 data-i18n="footerQuickLinks">روابط سريعة</h4>
+        <div class="footer-links">
+          <a href="home.html" class="footer-link" data-i18n="navHome">الرئيسية</a>
+          <a href="store.html" class="footer-link" data-i18n="navStore">المتجر</a>
+          <a href="news.html" class="footer-link" data-i18n="navNews">الأخبار</a>
+          <a href="aboutus.html" class="footer-link" data-i18n="navAbout">من نحن</a>
+          <a href="contact.html" class="footer-link" data-i18n="navContact">اتصل بنا</a>
+        </div>
+      </div>
+      
+      <!-- Legal Section -->
+      <div class="footer-section">
+        <h4 data-i18n="footerLegal">معلومات قانونية</h4>
+        <div class="footer-links">
+          <a href="faq.html" class="footer-link" data-i18n="footerFaq">الأسئلة الشائعة</a>
+          <a href="privacypolicy.html" class="footer-link" data-i18n="footerPrivacy">سياسة الخصوصية</a>
+          <a href="termsconditions.html" class="footer-link" data-i18n="footerTerms">الشروط والأحكام</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copy" data-i18n="footerCopyright">
+        © 2025 Vita Nova. جميع الحقوق محفوظة.
+      </div>
+      <button class="footer-admin" onclick="openAdminLogin()" data-i18n="footerAdmin">⚙️ لوحة الإدارة</button>
+    </div>
+  </div>
+</footer>
+
+<!-- Admin Login Modal -->
+<div id="adminLoginModal" class="admin-modal">
+  <div class="admin-modal-content">
+    <h3 data-i18n="adminLogin">تسجيل دخول الإدارة</h3>
+    <div id="adminLoginError" class="admin-error"></div>
+    
+    <div class="field">
+      <label data-i18n="username">اسم المستخدم</label>
+      <input type="text" id="adminUsername" autocomplete="off">
+    </div>
+    
+    <div class="field" style="margin-top: 12px;">
+      <label data-i18n="password">كلمة المرور</label>
+      <input type="password" id="adminPassword" autocomplete="off">
+    </div>
+    
+    <div class="row" style="margin-top: 20px;">
+      <button class="btn" onclick="attemptAdminLogin()" data-i18n="enter">دخول</button>
+      <button class="btn secondary" onclick="closeAdminLogin()" data-i18n="cancel">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<!-- Admin Control Panel -->
+<div id="adminControlPanel" class="admin-modal">
+  <div class="admin-modal-content">
+    <h3 data-i18n="adminPanel">لوحة التحكم</h3>
+    
+    <div class="admin-controls">
+      <button class="btn secondary open-settings-btn" data-i18n="priceSettings">إعدادات السعر</button>
+      <button class="btn secondary open-commission-btn" data-i18n="commissionSettings">العمولة</button>
+    </div>
+    
+    <button class="btn secondary admin-close" onclick="closeAdminPanel()" data-i18n="close">إغلاق</button>
+  </div>
+</div>
+
+<!-- Commission Settings Modal -->
+<div class="modalBack" id="commissionBack" role="dialog" aria-modal="true" aria-label="إعدادات العمولة">
+  <div class="modal" style="max-width:500px">
+    <div class="mhd">
+      <div>
+        <strong data-i18n="commissionSettingsTitle">إعدادات العمولة</strong>
+        <div class="muted" style="font-size:12px;margin-top:4px" data-i18n="commissionSettingsSubtitle">اختر نوع العمولة وحدد قيمتها لكل منتج.</div>
+      </div>
+      <button class="x" id="closeCommission" data-i18n="back">أرجع</button>
+    </div>
+    <div class="mbd">
+      <div class="commission-type-selector">
+        <button class="commission-type-btn" id="commTypeFixed" data-type="fixed" data-i18n="fixedCommission">عمولة ثابتة</button>
+        <button class="commission-type-btn" id="commTypePercent" data-type="percent" data-i18n="percentCommission">نسبة ثابتة</button>
+      </div>
+      
+      <div class="commission-inputs">
+        <div class="commission-input-group">
+          <label>1g <span data-i18n="product">منتج</span></label>
+          <div class="commission-input-row">
+            <input type="number" step="0.01" min="0" id="comm_1" />
+            <span class="commission-unit" id="commUnit_1">AED</span>
+          </div>
+        </div>
+        <div class="commission-input-group">
+          <label>2.5g <span data-i18n="product">منتج</span></label>
+          <div class="commission-input-row">
+            <input type="number" step="0.01" min="0" id="comm_2.5" />
+            <span class="commission-unit" id="commUnit_2.5">AED</span>
+          </div>
+        </div>
+        <div class="commission-input-group">
+          <label>5g <span data-i18n="product">منتج</span></label>
+          <div class="commission-input-row">
+            <input type="number" step="0.01" min="0" id="comm_5" />
+            <span class="commission-unit" id="commUnit_5">AED</span>
+          </div>
+        </div>
+        <div class="commission-input-group">
+          <label>10g <span data-i18n="product">منتج</span></label>
+          <div class="commission-input-row">
+            <input type="number" step="0.01" min="0" id="comm_10" />
+            <span class="commission-unit" id="commUnit_10">AED</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="sep"></div>
+      
+      <div class="row">
+        <button class="btn" id="saveCommission" data-i18n="saveCommissionSettings">حفظ إعدادات العمولة</button>
+      </div>
+      
+      <div class="note" style="margin-top:12px">
+        <b data-i18n="commissionNote">ملاحظة:</b> <span id="commissionNote" data-i18n="fixedCommissionNote">العمولة الثابتة تُضاف مباشرة بالدرهم لكل نوع.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

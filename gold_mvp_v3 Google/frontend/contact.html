@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>اتصل بنا — Vita Nova</title>
+  <style>
+    :root{--bg:#0a0a0a;--card:#1f1b17;--muted:#c9b896;--text:#fffff0;--line:rgba(201,184,150,.15);--good:#FFD700;--warn:#F4B942;--bad:#CD7F32;--btn:#B8860B;--btn2:#FFD700;--chip:#1a1613;--shadow: 0 10px 30px rgba(0,0,0,.6);--gold-gradient: linear-gradient(135deg, #FFD700, #B8860B);--gold-glow: 0 0 20px rgba(255,215,0,.3);--radius:18px;--radius2:14px;--font: system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans Arabic", "Noto Kufi Arabic", Arial, sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:var(--font);background: radial-gradient(1200px 600px at 70% -10%, rgba(184,134,11,.25), transparent 60%),radial-gradient(900px 400px at 10% 0%, rgba(205,127,50,.15), transparent 60%),var(--bg);color:var(--text);min-height:100vh;display:flex;flex-direction:column}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+    header{background: rgba(31,27,23,.5);border-bottom: 2px solid var(--line);backdrop-filter: blur(10px);padding:20px 0}
+    .header-container{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:32px}
+    .brand{display:flex;gap:16px;align-items:center;cursor:pointer;transition: all 0.3s ease;flex-shrink:0}
+    .brand:hover{transform: translateY(-2px)}
+    .logo{width:70px;height:70px;object-fit: contain;filter: drop-shadow(0 4px 12px rgba(255,215,0,.3));transition: filter 0.3s ease}
+    .brand:hover .logo{filter: drop-shadow(0 6px 16px rgba(255,215,0,.5))}
+    .brand-text{display:flex;flex-direction:column;gap:4px}
+    .brand-name{margin:0;font-size:28px;font-weight:900;letter-spacing:.5px;background: var(--gold-gradient);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text;line-height:1.1}
+    .brand-tagline{font-size:11px;color:var(--muted);letter-spacing:1.2px;font-weight:500}
+    .header-right{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+    .unified-nav{display:flex;gap:8px;align-items:center;background: rgba(31,27,23,.6);padding:10px 14px;border-radius:16px;border:1px solid rgba(255,215,0,.2);box-shadow: 0 4px 20px rgba(0,0,0,.3);backdrop-filter: blur(10px)}
+    .nav-links{display:flex;gap:6px;align-items:center;padding-right:12px;border-right:1px solid rgba(255,215,0,.15)}
+    [dir="ltr"] .nav-links{padding-right:0;padding-left:12px;border-right:none;border-left:1px solid rgba(255,215,0,.15)}
+    .nav-btn{border:none;cursor:pointer;padding:10px 16px;border-radius:10px;font-weight:600;font-size:13px;background: transparent;color:var(--muted);transition: all 0.3s ease;white-space:nowrap}
+    .nav-btn:hover{color:var(--text);background: rgba(255,215,0,.08);transform: translateY(-1px)}
+    .nav-btn.active{background: var(--gold-gradient);color:#1a1613;box-shadow: 0 4px 12px rgba(255,215,0,.25)}
+    .header-actions{display:flex;gap:8px;align-items:center}
+    .divider{width:1px;height:32px;background: rgba(255,215,0,.15)}
+    .lang-toggle{background: transparent;border:1px solid rgba(255,215,0,.25);border-radius:10px;padding:8px 12px;cursor:pointer;color:var(--muted);font-weight:600;font-size:12px;transition: all 0.3s ease;display:flex;align-items:center;gap:6px}
+    .lang-toggle:hover{background: rgba(255,215,0,.08);border-color:rgba(255,215,0,.4);color:var(--text)}
+    .cart-button{position:relative;background: transparent;border:1px solid rgba(255,215,0,.3);border-radius:10px;padding:9px 14px;cursor:pointer;display:flex;align-items:center;gap:8px;color:var(--text);font-weight:600;font-size:13px;transition: all 0.3s ease;text-decoration:none}
+    .cart-button:hover{background: rgba(255,215,0,.1);border-color:rgba(255,215,0,.5);transform: translateY(-1px)}
+    .cart-badge{background: var(--gold-gradient);color:#1a1613;border-radius:999px;padding:3px 8px;font-size:11px;font-weight:700;min-width:20px;text-align:center;box-shadow: 0 2px 8px rgba(255,215,0,.3)}
+    .auth-btn{border:none;cursor:pointer;padding:10px 18px;border-radius:10px;font-weight:600;font-size:13px;transition: all 0.3s ease;white-space:nowrap}
+    .auth-btn.login{background: transparent;border:1px solid rgba(255,215,0,.3);color:var(--text)}
+    .auth-btn.login:hover{background: rgba(255,215,0,.08);border-color:rgba(255,215,0,.5)}
+    .auth-btn.register{background: var(--gold-gradient);color:#1a1613;box-shadow: 0 4px 12px rgba(255,215,0,.25);border:none}
+    .auth-btn.register:hover{box-shadow: 0 6px 16px rgba(255,215,0,.4);transform: translateY(-2px)}
+    .auth-buttons{display:flex;gap:8px;align-items:center}
+    main{flex:1;padding: 40px 0}
+    .page-header{text-align:center;margin-bottom:40px}
+    .page-title{font-size:36px;font-weight:900;margin:0 0 12px 0;background: var(--gold-gradient);-webkit-background-clip: text;-webkit-text-fill-color: transparent;background-clip: text}
+    .page-subtitle{font-size:16px;color:var(--muted);margin:0;line-height:1.6}
+    .site-footer{margin-top:auto;padding:40px 0 20px;border-top:2px solid var(--line);background: rgba(31,27,23,.4)}
+    .footer-content{max-width:1200px;margin:0 auto;padding:0 24px}
+    .footer-sections{display:grid;grid-template-columns: 2fr 1fr 1fr;gap:40px;margin-bottom:30px}
+    .footer-section h4{color:var(--good);font-size:16px;margin:0 0 16px 0;font-weight:700}
+    .footer-links{display:flex;flex-direction:column;gap:12px}
+    .footer-link{color:var(--muted);font-size:14px;text-decoration:none;transition: all 0.3s ease;display:inline-block}
+    .footer-link:hover{color:var(--good);transform: translateX(-4px)}
+    [dir="ltr"] .footer-link:hover{transform: translateX(4px)}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:20px;border-top:1px solid var(--line);flex-wrap:wrap;gap:16px}
+    .footer-copy{color:var(--muted);font-size:13px}
+    @media (max-width: 920px){.header-container{flex-direction:column;gap:20px}.brand{width:100%;justify-content:center}.header-right{width:100%}.unified-nav{width:100%;flex-direction:column;gap:12px;padding:12px}.nav-links{width:100%;overflow-x:auto;justify-content:flex-start;border-right:none;border-bottom:1px solid rgba(255,215,0,.15);padding-right:0;padding-bottom:12px}[dir="ltr"] .nav-links{border-left:none;padding-left:0}.header-actions{width:100%;justify-content:center;flex-wrap:wrap}.nav-btn{flex-shrink:0}.divider{display:none}}
+    @media (max-width: 768px){.footer-sections{grid-template-columns: 1fr;gap:30px}.footer-bottom{flex-direction:column;text-align:center}.brand-name{font-size:24px}.logo{width:60px;height:60px}header{padding:16px 0}.page-title{font-size:28px}}
+    @media (max-width: 480px){.brand-name{font-size:22px}.logo{width:50px;height:50px}.page-title{font-size:24px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="brand" onclick="window.location.href='home.html'">
+        <img src="images/fillerlogovita.png" alt="Vita Nova" class="logo">
+        <div class="brand-text">
+          <div class="brand-name">Vita Nova</div>
+          <div class="brand-tagline" data-i18n="brandTagline">سبائك ذهب عيار 24</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <nav class="unified-nav">
+          <div class="nav-links">
+            <a href="home.html" class="nav-btn" data-page="home" data-i18n="navHome">الرئيسية</a>
+            <a href="store.html" class="nav-btn" data-page="store" data-i18n="navStore">المتجر</a>
+            <a href="news.html" class="nav-btn" data-page="news" data-i18n="navNews">الأخبار</a>
+            <a href="aboutus.html" class="nav-btn" data-page="aboutus" data-i18n="navAbout">من نحن</a>
+            <a href="contact.html" class="nav-btn" data-page="contact" data-i18n="navContact">اتصل بنا</a>
+          </div>
+          <div class="header-actions">
+            <button class="lang-toggle" aria-label="Toggle Language">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <span class="lang-text">AR</span>
+            </button>
+            <div class="divider"></div>
+            <a href="store.html" class="cart-button" id="cartBtn" data-i18n-aria="cart">
+              <svg style="width:18px;height:18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM20 22a1 1 0 1 0 0-2 1 1 0 0 0 0 2zM1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+              <span id="cartCount" class="cart-badge">0</span>
+            </a>
+            <div class="divider"></div>
+            <div id="authSection">
+              <div id="guestAuth" class="auth-buttons">
+                <a href="login.html" class="auth-btn login" id="loginLink" data-i18n="login">تسجيل الدخول</a>
+                <a href="register.html" class="auth-btn register" id="registerLink" data-i18n="register">إنشاء حساب</a>
+              </div>
+              <div id="userAuth" class="auth-buttons" style="display:none;">
+                <a href="purchaseshistory.html" class="auth-btn login" id="ordersBtn" data-i18n="orderHistory">سجل الطلبات</a>
+                <a href="account.html" class="auth-btn register" id="accountBtn" data-i18n="myAccount">حسابي</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <div class="page-header">
+        <h1 class="page-title" data-i18n="contactTitle">اتصل بنا</h1>
+        <p class="page-subtitle" data-i18n="contactSubtitle">نحن هنا للإجابة على استفساراتك</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <div class="footer-sections">
+        <div class="footer-section">
+          <h4>Vita Nova</h4>
+          <p style="color:var(--muted);font-size:14px;line-height:1.7;margin:0" data-i18n="footerAbout">منصة موثوقة لبيع سبائك الذهب عيار 24 داخل الإمارات. نقدم أسعارًا شفافة وتسليمًا سريعًا مع ضمان الجودة.</p>
+        </div>
+        <div class="footer-section">
+          <h4 data-i18n="footerQuickLinks">روابط سريعة</h4>
+          <div class="footer-links">
+            <a href="home.html" class="footer-link" data-i18n="navHome">الرئيسية</a>
+            <a href="store.html" class="footer-link" data-i18n="navStore">المتجر</a>
+            <a href="news.html" class="footer-link" data-i18n="navNews">الأخبار</a>
+            <a href="aboutus.html" class="footer-link" data-i18n="navAbout">من نحن</a>
+            <a href="contact.html" class="footer-link" data-i18n="navContact">اتصل بنا</a>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h4 data-i18n="footerLegal">معلومات قانونية</h4>
+          <div class="footer-links">
+            <a href="faq.html" class="footer-link" data-i18n="footerFaq">الأسئلة الشائعة</a>
+            <a href="privacypolicy.html" class="footer-link" data-i18n="footerPrivacy">سياسة الخصوصية</a>
+            <a href="termsconditions.html" class="footer-link" data-i18n="footerTerms">الشروط والأحكام</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy" data-i18n="footerCopyright">© 2025 Vita Nova. جميع الحقوق محفوظة.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '') || 'home';
+    document.querySelectorAll('.nav-btn[data-page]').forEach(btn => {
+      if(btn.getAttribute('data-page') === currentPage) btn.classList.add('active');
+    });
+    const fullPageName = currentPage + '.html';
+    const loginLink = document.getElementById('loginLink');
+    const registerLink = document.getElementById('registerLink');
+    if(loginLink) loginLink.href = `login.html?redirect=${encodeURIComponent(fullPageName)}`;
+    if(registerLink) registerLink.href = `register.html?redirect=${encodeURIComponent(fullPageName)}`;
+    checkAuthStatus();
+    updateCartCount();
+    window.addEventListener('languageChanged', function(e) {
+      document.title = VitaNovaLang.t('contactTitle') + ' — Vita Nova';
+    });
+  });
+  function checkAuthStatus() {
+    const storedUser = localStorage.getItem('vitanova_user');
+    if(storedUser) { try { showLoggedInState(JSON.parse(storedUser)); } catch(e) { localStorage.removeItem('vitanova_user'); showGuestState(); } } else { showGuestState(); }
+  }
+  function showLoggedInState(user) { document.getElementById('guestAuth').style.display = 'none'; document.getElementById('userAuth').style.display = 'flex'; }
+  function showGuestState() { document.getElementById('guestAuth').style.display = 'flex'; document.getElementById('userAuth').style.display = 'none'; }
+  function updateCartCount() {
+    const cartCountEl = document.getElementById('cartCount');
+    if(!cartCountEl) return;
+    try { const state = JSON.parse(localStorage.getItem('gold_mvp_state_v1') || '{}'); const cart = state.cart || {}; cartCountEl.textContent = Object.values(cart).reduce((sum, qty) => sum + qty, 0); } catch(e) { cartCountEl.textContent = '0'; }
+  }
+  </script>
+</body>
+</html>

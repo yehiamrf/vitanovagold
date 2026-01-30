@@ -1,0 +1,12 @@
+order_id,customer_id,product,quantity,gold_price_gram,purchase_date,payment_type,commission_type,commission_amount,tax_amount,total,whatsapp_number,emirate,city,address
+I2KBNHW38D,0000000001,10.0g Gold Bar 24K,2,588.9,2026-01-25 20:13:52,Cash on Delivery,fixed,4.0,588.9,12370.9,01245567788,دبي,gfg,f 533
+I2KBNHW38D,0000000001,2.5g Gold Bar 24K,1,588.9,2026-01-25 20:13:52,Cash on Delivery,fixed,0.0,73.61,1545.86,01245567788,دبي,gfg,f 533
+WAEPF64L10,0000000001,5.0g Gold Bar 24K,1,588.9,2026-01-25 20:14:55,Cash on Delivery,fixed,5.0,147.22,3096.72,02495565500,دبي,vf 5,gr 5
+WAEPF64L10,0000000001,10.0g Gold Bar 24K,3,588.9,2026-01-25 20:14:55,Cash on Delivery,fixed,6.0,883.35,18556.35,02495565500,دبي,vf 5,gr 5
+WAEPF64L10,0000000001,2.5g Gold Bar 24K,1,588.9,2026-01-25 20:14:55,Cash on Delivery,fixed,0.0,73.61,1545.86,02495565500,دبي,vf 5,gr 5
+3RWUNHL99F,0000000001,1.0g Gold Commodity 24K,1,588.9,2026-01-25 20:20:08,Online Payment,fixed,2.0,29.45,620.35,01245586644,دبي,fgf 5,5y
+3RWUNHL99F,0000000001,2.5g Gold Commodity 24K,2,588.9,2026-01-25 20:20:08,Online Payment,fixed,0.0,147.22,3091.72,01245586644,دبي,fgf 5,5y
+JHFEH92NAL,0000000001,1.0g Gold Commodity 24K,2,602.64,2026-01-27 18:20:39,Online Payment,fixed,4.0,60.26,1269.54,048588848859,دبي,fe 5,d 55
+JHFEH92NAL,0000000001,5.0g Gold Commodity 24K,1,602.64,2026-01-27 18:20:39,Online Payment,fixed,5.0,150.66,3168.86,048588848859,دبي,fe 5,d 55
+JHFEH92NAL,0000000001,10.0g Gold Commodity 24K,1,602.64,2026-01-27 18:20:39,Online Payment,fixed,2.0,301.32,6329.72,048588848859,دبي,fe 5,d 55
+JHFEH92NAL,0000000001,2.5g Gold Commodity 24K,2,602.64,2026-01-27 18:20:39,Online Payment,fixed,0.0,150.66,3163.86,048588848859,دبي,fe 5,d 55
