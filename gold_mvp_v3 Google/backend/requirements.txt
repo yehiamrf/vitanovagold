@@ -21,3 +21,7 @@ requests>=2.31.0
 
 # Database
 # SQLite is built-in with Python, no additional package needed
+
+
+# Google Cloud Storage (for persistent storage in GCS bucket)
+google-cloud-storage>=2.14.0
