@@ -269,3 +269,15 @@ def check_email():
     if get_user_by_email(email):
                 return jsonify({'exists': True})
     return jsonify({'exists': False})
+
+# ============== INITIALIZATION FUNCTION ==============
+def init_auth(app):
+            """Initialize authentication system with the Flask app"""
+    # Register the authentication blueprint
+    app.register_blueprint(auth_bp)
+
+    # Configure session
+    app.config['SESSION_COOKIE_HTTPONLY'] = True
+    app.config['SESSION_COOKIE_SAMESITE'] = 'Lax'
+
+    print("✅ Authentication system initialized with GCS storage")
